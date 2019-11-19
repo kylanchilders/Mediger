@@ -28,9 +28,10 @@ module.exports = function(sequelize, DataTypes) {
     },
     orgID: {
       type: DataTypes.INTEGER(11),
-      references: 'organizations', // <<< Note, its table's name, not object name
-      referencesKey: 'id' // <<< Note, its a column name
-    }
+      references: {
+        model: 'organizations', // <<< Note, its table's name, not object name
+        key: 'id' // <<< Note, its a column name
+    }}
   });
   return orgUsers;
 };
