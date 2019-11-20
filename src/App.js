@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 // import Signup from "./pages/Signup";
 // import Signin from "./pages/Signin";
 // import CreateUser from "./pages/CreateUser";
-import Header from "./components/Nav";
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
     <Router>
       <div>
         {/*render our nav component*/}
-        <Header />
+       
         {/*switch is imported from our react-router-dom to allow us to pass various paths for routing*/}
         <Switch>
           {/*Root route that renders our Home component*/}

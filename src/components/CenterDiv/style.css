@@ -1,0 +1,33 @@
+img
+{
+    height: 600px;
+    background-color: black;
+    color:white; 
+  }
+
+
+  .ci{
+    height: 600px;
+  }
+  h2{
+    font-family:'TimesNewRoman';
+    font-weight:1000;
+  }
+  h3{
+    font-family:'TimesNewRoman';
+    font-weight:1000;
+
+  }
+  .carouselCaption {
+    /* z-index:10; */
+    font-family:'TimesNewRoman';
+    color:#fff;
+    text-align:center;
+    top:60%;
+    left:65%;
+    bottom:auto;
+    -webkit-transform:translate(0, -50%);
+    -ms-transform:translate(0, -50%);
+    transform:translate(0, -50%);
+    }
+    
