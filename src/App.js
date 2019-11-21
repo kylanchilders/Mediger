@@ -3,9 +3,9 @@ import React from "react";
 //import BrowserRouter, Route, and Switch features from react-router-dom package. BrowserRouter is imported as Router
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
-// import Signup from "./pages/Signup";
-// import Signin from "./pages/Signin";
-// import CreateUser from "./pages/CreateUser";
+import Signup from "./pages/Signup";
+import Signin from "./pages/Signin";
+//import CreateUser from "./pages/CreateUser";
 import Header from "./components/Nav";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -20,10 +20,11 @@ function App() {
         <Switch>
           {/*Root route that renders our Home component*/}
           <Route exact path="/" component={Home} />
-          {/* <Route exact path="/Signup" component={Saved} />
-          <Route exact path="/Signin" component={Saved} />
-          <Route exact path="/CreateUser" component={Saved} />
-          <Route component={NoMatch} /> */}
+          <Route exact path="/Signup" component={Signup} />
+          <Route exact path="/Signin" component={Signin} />
+          <Route exact path="/Checkin" component={Checkin} />
+          {/* <Route exact path="/CreateUser" component={Saved} /> */}
+          {/* <Route component={NoMatch} /> */}
         </Switch>
       </div>
     </Router>
