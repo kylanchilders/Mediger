@@ -2,6 +2,10 @@
 
 module.exports = function (sequelize, DataTypes) {
   const Patient = sequelize.define('patient', {
+    CheckedIn: {
+      type: DataTypes.BOOLEAN(),
+      defaultValue: '0'
+    },
     First_Name: {
       type: DataTypes.STRING(50),
       allowNull: false
