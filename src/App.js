@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Signin from "./pages/Signin";
+import Checkin from "./pages/Checkin"
 //import CreateUser from "./pages/CreateUser";
 import Header from "./components/Nav";
 import 'bootstrap/dist/css/bootstrap.min.css'

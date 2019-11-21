@@ -2,7 +2,7 @@ import React from "react";
 
 function Checkin() {
     return (
-        <h1>TestingThisgoddamnpage</h1>
+        <h1>Hello there</h1>
     )
 }
 
