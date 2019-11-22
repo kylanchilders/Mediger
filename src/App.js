@@ -1,35 +1,41 @@
-//import react package
 import React from "react";
-//import BrowserRouter, Route, and Switch features from react-router-dom package. BrowserRouter is imported as Router
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home";
-import Signup from "./pages/Signup";
-import Signin from "./pages/Signin";
-import Checkin from "./pages/Checkin"
-//import CreateUser from "./pages/CreateUser";
-import Header from "./components/Nav";
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { Router, Route, Switch } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
+import PrivateRoute from "./components/PrivateRoute";
+import Loading from "./components/Loading";
+import Home from "./pages/Home";
+//import Profile from "./views/Profile";
+import { useAuth0 } from "./react-auth0-spa";
+import history from "./utils/history";
+
+// styles
+import "./App.css";
+
+// fontawesome
+import initFontAwesome from "./utils/initFontAwesome";
+initFontAwesome();
+
+const App = () => {
+  const { loading } = useAuth0();
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
-    //uses router component imported above to be able to pass different routes to render different components based on URL
-    <Router>
-      <div>
-        {/*render our nav component*/}
-        <Header />
-        {/*switch is imported from our react-router-dom to allow us to pass various paths for routing*/}
-        <Switch>
-          {/*Root route that renders our Home component*/}
-          <Route exact path="/" component={Home} />
-          <Route exact path="/Signup" component={Signup} />
-          <Route exact path="/Signin" component={Signin} />
-          <Route exact path="/Checkin" component={Checkin} />
-          {/* <Route exact path="/CreateUser" component={Saved} /> */}
-          {/* <Route component={NoMatch} /> */}
-        </Switch>
+    <Router history={history}>
+      <div id="app" className="d-flex flex-column h-100">
+    
+       
+          <Switch>
+            <Route path="/" exact component={Home} />
+          </Switch>
+    
+       
       </div>
     </Router>
   );
-}
+};
 
 export default App;

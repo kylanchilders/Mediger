@@ -1,9 +1,20 @@
 //Using desconstructor to import "Component" feature from react package
 import React from "react";
+import NavBar from "../components/Nav";
+import MainDiv from "../components/CenterDiv";
+import FooterDiv from "../components/Footer";
 
 function Home() {
     return (
-        <h1>TestingThisgoddamnpage1</h1>
+        <div>
+        <NavBar />
+        <MainDiv />
+        <br></br>
+        <br></br>
+        <br></br>
+        <FooterDiv/>
+        </div>
+        
     )
 }
 

@@ -1,12 +1,12 @@
 import React from "react";
-import NavBar from "../components/Nav/";
+import Header from "../components/Nav";
 import FooterDiv from "../components/Footer";
-import SignUpDiv from "../components/SignUpDiv";
-function SignUp() {
+import SignInDiv from "../components/SignInDiv";
+function SignIn() {
     return (
         <div>
-        <NavBar />
-        <SignUpDiv />
+        <Header />
+        <SignInDiv />
         <br></br>
         <br></br>
         <br></br>
@@ -16,4 +16,4 @@ function SignUp() {
     )
 }
 
-export default SignUp;
+export default SignIn;

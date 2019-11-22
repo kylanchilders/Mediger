@@ -1,11 +1,11 @@
 import React from "react";
-import NavBar from "../components/Nav/";
+import Header from "../components/Nav";
 import FooterDiv from "../components/Footer";
 import SignUpDiv from "../components/SignUpDiv";
 function SignUp() {
     return (
         <div>
-        <NavBar />
+        <Header />
         <SignUpDiv />
         <br></br>
         <br></br>

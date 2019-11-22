@@ -2,3 +2,13 @@
     position: relative !important;
     float: right  !important;
 }
+h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+Nav
+{
+    font-size:20px;
+    font-weight: bold;
+    color: darkblue;
+    font-family: 'Times New Roman', Times, serif;
+}
