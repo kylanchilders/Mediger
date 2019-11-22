@@ -1,9 +1,19 @@
 import React from "react";
-
-function Signup() {
+import NavBar from "../components/Nav/";
+import FooterDiv from "../components/Footer";
+import SignUpDiv from "../components/SignUpDiv";
+function SignUp() {
     return (
-        <h1>TestingThispage</h1>
+        <div>
+        <NavBar />
+        <SignUpDiv />
+        <br></br>
+        <br></br>
+        <br></br>
+        <FooterDiv/>
+        </div>
+        
     )
 }
 
-export default Signup;
+export default SignUp;

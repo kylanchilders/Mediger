@@ -3,6 +3,9 @@ import React from "react";
 //Use deconstructor to import Link feature from react-router-dom package
 // import { Link } from "react-router-dom";
 import { Nav, Navbar } from 'react-bootstrap';
+//import { NavLink as RouterNavLink } from "react-router-dom";
+import { useAuth0 } from "../../react-auth0-spa";
+
 import './style.css';
 const appName = {
   color: 'darkBlue',
@@ -21,9 +24,15 @@ const borderToLink={
   height:'40px'
 }
 const Header = () => {
+   
+  const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
+
+  const logoutWithRedirect = () =>
+    logout({
+      returnTo: window.location.origin
+    });
     return(
 <Navbar bg="light" expand="lg">
-<<<<<<< HEAD
   <Navbar.Brand href="/" style={appName}><h1>Mediger</h1></Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
@@ -31,20 +40,8 @@ const Header = () => {
     <img src={require('../../images/logo4.jpeg') } style={logoSize} alt="Logo"/> 
     </Nav>
     <Nav className="ml-auto">
-      <Nav.Link href="/SignUp" className="justify-content-end text-center" style={borderToLink}>SignUp</Nav.Link>
-      <Nav.Link href="/SignIn" className="justify-content-end text-center" style={borderToLink}>SignIn</Nav.Link>
-=======
-  <Navbar.Brand href="/">Mediger</Navbar.Brand>
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse id="basic-navbar-nav">
-  <Nav className="mr-auto">
-      <Nav.Link href="/">Home</Nav.Link>
-      </Nav>
-    <Nav className="ml-auto">
-      <Nav.Link href="/Signup" className="justify-content-end">Signup</Nav.Link>
-      <Nav.Link href="/Signin" className="justify-content-end">Signin</Nav.Link>
-      <Nav.Link href="/Checkin" className="justify-content-end">Checkin</Nav.Link>
->>>>>>> 65b5049298a25bc8bcb3177e11bf638dbc0cb9f8
+      <Nav.Link onClick={() => loginWithRedirect({})} className="justify-content-end text-center" style={borderToLink}>SignIn</Nav.Link>
+
     </Nav>
   </Navbar.Collapse>
 </Navbar>
