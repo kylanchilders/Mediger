@@ -1,7 +1,6 @@
 import React from "react";
 import Carousel from 'react-bootstrap/carousel';
 import "./style.css";
-import { relative } from "path";
 
 const MainDiv = () => {
     return(

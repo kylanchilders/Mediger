@@ -4,7 +4,6 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import { Nav, Navbar } from 'react-bootstrap';
 import './style.css';
-import { relative } from "path";
 const appName = {
   color: 'darkBlue',
 
@@ -14,22 +13,25 @@ const logoSize ={
   width:'40px',
 }
 const borderToLink={
-  color:'darkBlue',
+  backgroundColor:'darkBlue',
+  color:'white',
   border:'1px outset white',
-  marginRight:'20px'
+  marginRight:'20px',
+  width:'100px',
+  height:'40px'
 }
 const Header = () => {
     return(
 <Navbar bg="light" expand="lg">
-  <Navbar.Brand href="#home" style={appName}><h1>Mediger</h1></Navbar.Brand>
+  <Navbar.Brand href="/" style={appName}><h1>Mediger</h1></Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav>
-    <img src={require('../../images/logo4.jpeg') } style={logoSize} /> 
+    <img src={require('../../images/logo4.jpeg') } style={logoSize} alt="Logo"/> 
     </Nav>
     <Nav className="ml-auto">
-      <Nav.Link href="#Signup" className="justify-content-end" style={borderToLink}>SignUp</Nav.Link>
-      <Nav.Link href="#Signin" className="justify-content-end" style={borderToLink}>SignIn</Nav.Link>
+      <Nav.Link href="/SignUp" className="justify-content-end text-center" style={borderToLink}>SignUp</Nav.Link>
+      <Nav.Link href="/SignIn" className="justify-content-end text-center" style={borderToLink}>SignIn</Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>
