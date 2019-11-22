@@ -10,9 +10,9 @@ const router = express.Router();
 router.get('/', (req, res) => {
 	models.organization.findAll({
 		order: ['id', 'ASC']
-	}).then(organizations => {
-		if (organizations && Object.keys(organizations).length > 0)
-			res.json({ success: true, organizations });
+	}).then(organization => {
+		if (organization && Object.keys(organization).length > 0)
+			res.json({ success: true, organization });
 		else
 			res.status(400).json({ success: false, error: "Any organization found." });
 	})
