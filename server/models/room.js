@@ -6,10 +6,6 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    Address: {
-      type: DataTypes.STRING(50),
-      allowNull: false
-    },
     orgID: {
       type: DataTypes.INTEGER(11),
       references: {
