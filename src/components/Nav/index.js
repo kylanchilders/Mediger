@@ -23,6 +23,7 @@ const borderToLink={
 const Header = () => {
     return(
 <Navbar bg="light" expand="lg">
+<<<<<<< HEAD
   <Navbar.Brand href="/" style={appName}><h1>Mediger</h1></Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
@@ -32,6 +33,18 @@ const Header = () => {
     <Nav className="ml-auto">
       <Nav.Link href="/SignUp" className="justify-content-end text-center" style={borderToLink}>SignUp</Nav.Link>
       <Nav.Link href="/SignIn" className="justify-content-end text-center" style={borderToLink}>SignIn</Nav.Link>
+=======
+  <Navbar.Brand href="/">Mediger</Navbar.Brand>
+  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+  <Navbar.Collapse id="basic-navbar-nav">
+  <Nav className="mr-auto">
+      <Nav.Link href="/">Home</Nav.Link>
+      </Nav>
+    <Nav className="ml-auto">
+      <Nav.Link href="/Signup" className="justify-content-end">Signup</Nav.Link>
+      <Nav.Link href="/Signin" className="justify-content-end">Signin</Nav.Link>
+      <Nav.Link href="/Checkin" className="justify-content-end">Checkin</Nav.Link>
+>>>>>>> 65b5049298a25bc8bcb3177e11bf638dbc0cb9f8
     </Nav>
   </Navbar.Collapse>
 </Navbar>

@@ -7,6 +7,8 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 // import CreateUser from "./pages/CreateUser";
 
+
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
@@ -22,8 +24,6 @@ function App() {
           <Route exact path="/" component={Home} />
            <Route exact path="/SignUp" component={SignUp} />
            <Route exact path="/SignIn" component={SignIn} />
-          {/* <Route exact path="/CreateUser" component={Saved} />
-          <Route component={NoMatch} />  */}
         </Switch>
       </div>
     </Router>
