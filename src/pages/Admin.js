@@ -1,18 +1,18 @@
 import React from "react";
-import NavBar from "../components/Nav";
+import Header from "../components/Nav";
 import FooterDiv from "../components/Footer";
-import MainDiv from "../components/CenterDiv";
+import ProfileDiv from "../components/AdminDiv";
 
 function Admin() {
     return (
         <div>
-        <NavBar />
+        <Header />
+        <ProfileDiv />
         <br></br>
         <br></br>
         <br></br>
         <FooterDiv/>
         </div>
-        
     )
 }
 
