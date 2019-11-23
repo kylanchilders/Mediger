@@ -6,7 +6,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Loading from "./components/Loading";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
-//import Profile from "./views/Profile";
+import Profile from "./components/Profile";
 import { useAuth0 } from "./react-auth0-spa";
 import history from "./utils/history";
 
@@ -31,7 +31,8 @@ const App = () => {
        
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/Admin" exact component={Admin} />
+            <PrivateRoute path="/Admin" exact component={Admin} />
+            <PrivateRoute path="/Profile" exact component={Profile} />
           </Switch>
     
        
