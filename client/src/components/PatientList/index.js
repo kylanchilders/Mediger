@@ -1,11 +1,12 @@
 import React from "react";
-import styles from './sideBarMenu.css';
-// import Glyphicon from 'react-bootstrap/lib/Glyphicon';
+import "./style.css";
+import Table from 'react-bootstrap/Table'
 import { Nav, NavItem, Navbar, NavDropdown, DropdownItem } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-const ProfileDiv = () => {
+const PatientDiv = () => {
     return (
-        <div className="mainDiv" >
+        <div className="patientDiv" >
+           
             <div className="sideBarMenuContainer">
                 <Navbar fluid="true" inverse="true" >
                     <Navbar.Collapse>
@@ -28,12 +29,39 @@ const ProfileDiv = () => {
                         </Navbar.Text>
                     </Navbar.Collapse>
                 </Navbar>
-            </div>
+           
+        </div>
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>DateOfBirth</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                   
+                </tbody>
+            </Table>
         </div>
 
     )
 };
 
 //exportes our Nav component
-export default ProfileDiv;
+export default PatientDiv;
 
