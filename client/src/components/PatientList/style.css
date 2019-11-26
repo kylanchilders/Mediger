@@ -1,0 +1,40 @@
+
+.sideBarMenuContainer {
+    position: fixed;
+    border: 1px outset white;
+   height: 600px;
+   float:left;
+   
+}
+.patientDiv
+{
+    background-image:url("../../images/carouselImage3.jpeg");
+	background-repeat:no-repeat;
+    background-size:cover;
+    height: 600px;
+   
+    /* -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px); */
+}
+/*Remove rounded coners*/
+
+.nl
+{
+    display: block;
+    margin-bottom: 90px;
+    border : 1px outset white;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+background-color: whitesmoke;
+border-radius: 25px;
+}
+
+table
+{
+    position: relative;
+    left:15%;
+  
+}

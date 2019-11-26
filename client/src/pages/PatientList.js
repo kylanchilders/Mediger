@@ -1,13 +1,12 @@
 import React from "react";
 import Header from "../components/Nav";
 import FooterDiv from "../components/Footer";
-import ProfileDiv from "../components/AdminDiv";
-
+import PatientDiv from "../components/PatientList";
 function PatientList() {
     return (
         <div>
         <Header />
-        <ProfileDiv />
+       <PatientDiv/>
         <br></br>
         <br></br>
         <br></br>

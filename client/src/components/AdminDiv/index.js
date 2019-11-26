@@ -3,9 +3,6 @@ import styles from './sideBarMenu.css';
 // import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 import { Nav, NavItem, Navbar, NavDropdown, DropdownItem } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-
-
-
 const ProfileDiv = () => {
     return (
         <div className="mainDiv" >
