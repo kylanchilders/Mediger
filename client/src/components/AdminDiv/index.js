@@ -13,19 +13,19 @@ const ProfileDiv = () => {
                 <Navbar fluid="true" inverse="true" >
                     <Navbar.Collapse>
                         <Navbar.Text className="nt">
-                            <NavLink className="nl" to="/">
+                            <NavLink className="nl" to="/Home">
                                 Home
                         </NavLink>
-                            <NavLink className="nl" to="/">
+                            <NavLink className="nl" to="/PatientList">
                                 PatientList
                         </NavLink>
-                            <NavLink className="nl" to="/">
+                            <NavLink className="nl" to="/CreateRoom">
                                 CreateRoom
                         </NavLink>
-                            <NavLink className="nl" to="/">
+                            <NavLink className="nl" to="/CompanyInfo">
                                 Company Info
                         </NavLink>
-                            <NavLink className="nl" to="/">
+                            <NavLink className="nl" to="/FrontDesk">
                                 Front Desk
                         </NavLink>
                         </Navbar.Text>

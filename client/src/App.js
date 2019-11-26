@@ -9,6 +9,10 @@ import Admin from "./pages/Admin";
 import Profile from "./components/Profile";
 import { useAuth0 } from "./react-auth0-spa";
 import history from "./utils/history";
+import PatientList from "./pages/PatientList";
+import CreateRoom from"./pages/CreateRoom.js";
+import CompanyInfo from"./pages/CompanyInfo"; 
+import FrontDesk from"./pages/FrontDesk";
 
 // styles
 import "./App.css";
@@ -33,6 +37,10 @@ const App = () => {
             <Route path="/" exact component={Home} />
             <PrivateRoute path="/Admin" exact component={Admin} />
             <PrivateRoute path="/Profile" exact component={Profile} />
+            <PrivateRoute path="/PatientList" exact component={PatientList} />
+            <PrivateRoute path="/CreateRoom" exact component={CreateRoom} />
+            <PrivateRoute path="/CompanyInfo" exact component={CompanyInfo} />
+            <PrivateRoute path="/FrontDesk" exact component={FrontDesk} />
           </Switch>
     
        
