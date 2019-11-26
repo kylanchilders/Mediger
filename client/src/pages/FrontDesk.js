@@ -1,13 +1,12 @@
 import React from "react";
 import Header from "../components/Nav";
 import FooterDiv from "../components/Footer";
-import ProfileDiv from "../components/AdminDiv";
-
+import FrontDeskDiv from "../components/FrontDesk";
 function FrontDesk() {
     return (
         <div>
         <Header />
-        <ProfileDiv />
+       <FrontDeskDiv/>
         <br></br>
         <br></br>
         <br></br>

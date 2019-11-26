@@ -3,9 +3,10 @@
     position: fixed;
     border: 1px outset white;
    height: 600px;
+   float:left;
    
 }
-.mainDiv
+.frontDeskDiv
 {
     background-image:url("../../images/carouselImage3.jpeg");
 	background-repeat:no-repeat;
@@ -29,4 +30,11 @@
     text-align: center;
 background-color: whitesmoke;
 border-radius: 25px;
+}
+
+table
+{
+    position: relative;
+    left:15%;
+  
 }
