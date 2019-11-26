@@ -1,15 +1,12 @@
 import React from "react";
-import styles from './sideBarMenu.css';
-// import Glyphicon from 'react-bootstrap/lib/Glyphicon';
-import { Nav, NavItem, Navbar, NavDropdown, DropdownItem, Col, Row, Container } from 'react-bootstrap';
+import "./style.css";
+import Table from 'react-bootstrap/Table'
+import { Nav, NavItem, Navbar, NavDropdown, DropdownItem } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import CompanyInfoForm from '../CompanyInfoForm'
-
-
-
-const CompanyInfoFormDiv = () => {
+const FrontDeskDiv = () => {
     return (
-        <div className="mainDiv" >
+        <div className="frontDeskDiv" >
+           
             <div className="sideBarMenuContainer">
                 <Navbar fluid="true" inverse="true" >
                     <Navbar.Collapse>
@@ -32,13 +29,39 @@ const CompanyInfoFormDiv = () => {
                         </Navbar.Text>
                     </Navbar.Collapse>
                 </Navbar>
-            </div>
-            <CompanyInfoForm />
+           
+        </div>
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>DateOfBirth</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                   
+                </tbody>
+            </Table>
         </div>
 
     )
 };
 
 //exportes our Nav component
-export default CompanyInfoFormDiv;
+export default FrontDeskDiv;
 
