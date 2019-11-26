@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "../components/Nav";
 import FooterDiv from "../components/Footer";
-import ProfileDiv from "../components/AdminDiv";
+import CompanyInfoFormDiv from "../components/CompanyInfoFormDiv";
 
 function CompanyInfo() {
     return (
         <div>
         <Header />
-        <ProfileDiv />
+        <CompanyInfoFormDiv />
         <br></br>
         <br></br>
         <br></br>
