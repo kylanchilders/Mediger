@@ -31,14 +31,14 @@ const PatientDiv = () => {
                 </Navbar>
            
         </div>
-            <Table striped bordered hover>
+            <Table className="patientTable"striped bordered hover>
                 <thead>
                     <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>DateOfBirth</th>
-                        <th>Address</th>
-                        <th>Email</th>
+                        <th className="head">First Name</th>
+                        <th className="head">Last Name</th>
+                        <th className="head">DateOfBirth</th>
+                        <th className="head">Address</th>
+                        <th className="head">Email</th>
                     </tr>
                 </thead>
                 <tbody>

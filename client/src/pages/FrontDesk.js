@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../components/Nav";
+import Header from "../components/NavSignIn";
 import FooterDiv from "../components/Footer";
 import ProfileDiv from "../components/AdminDiv";
 
