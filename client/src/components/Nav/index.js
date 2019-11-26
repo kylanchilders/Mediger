@@ -32,7 +32,7 @@ const Header = () => {
       returnTo: window.location.origin
     });
     return(
-<Navbar bg="light" expand="lg">
+<Navbar className="nb" expand="lg">
   <Navbar.Brand href="/" style={appName}><h1>Mediger</h1></Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">

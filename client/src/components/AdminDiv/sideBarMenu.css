@@ -2,8 +2,8 @@
 .sideBarMenuContainer {
     position: fixed;
     border: 1px outset white;
-   background-color: darkblue;
    height: 600px;
+   
 }
 .mainDiv
 {
@@ -27,5 +27,6 @@
     border : 1px outset white;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
-background-color: white;
+background-color: whitesmoke;
+border-radius: 25px;
 }
