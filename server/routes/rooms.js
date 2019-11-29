@@ -43,7 +43,7 @@ router.get('/room/:id', (req, res) => {
 /**
  * Insert new room
  */
-router.post('/room/', (req, res) => {
+router.post('/api/createRoom', (req, res) => {
 	let { Name, OrgID } = req.body;
 	models.room
 		.build({ Name, OrgID })
