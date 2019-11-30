@@ -9,7 +9,6 @@ const router = express.Router();
  */
 router.get('/', (req, res) => {
 	models.patient.findAll({        
-		order: ['id', 'ASC']
 	}).then(patient => {
 		if (patient && Object.keys(patient).length > 0)
 			res.json({ success: true, patient });
