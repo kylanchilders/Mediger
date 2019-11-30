@@ -45,11 +45,11 @@ router.get('/:id', (req, res) => {
  */
 router.post('/createRoom', (req, res) => {
 	console.log(req.body);
-	let { Name, OrgID } = req.body;
+	let { Name, orgID } = req.body;
 	models.room
-		.build({ Name, OrgID })
+		.build({ Name, orgID })
 		.save()
-		.then(() => res.json({ success: true })), console.log(req)
+		.then(() => res.json({ success: true }))
 		.catch((err) => res.status(400).json({ success: false, errors: { globals: err } }));
 });
 
@@ -57,9 +57,9 @@ router.post('/createRoom', (req, res) => {
  * Update room by ID
  */
 router.put('/:id', (req, res) => {
-	let { id, Name, OrgID } = req.body;
+	let { id, Name, orgID } = req.body;
 	models.room
-		.update({ Name, OrgID }, { where: { id } })
+		.update({ Name, orgID }, { where: { id } })
 		.then(() => res.json({ success: true }))
 		.catch((err) => res.status(400).json({ success: false, errors: { globals: "Oops, something wrong happened.." } }));
 });

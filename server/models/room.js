@@ -8,10 +8,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     orgID: {
       type: DataTypes.INTEGER(11),
-      references: {
-        model: 'organizations', // <<< Note, its table's name, not object name
-        key: 'id' // <<< Note, its a column name
-      }
+
     },
     Available: {
       type: DataTypes.BOOLEAN(),

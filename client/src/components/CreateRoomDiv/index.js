@@ -11,34 +11,41 @@ class CreateRoomDiv extends Component {
     constructor() {
         super();
         this.state = {
-            name: '',
+            Name: '',
             orgID: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
       }
     
+      handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+          [name]: value
+        });
+      };
+
       handleSubmit(event) {
         event.preventDefault();
+
         const data = new FormData(event.target);
 
         console.log(...data)
-        
-        this.setState({
-            res: (data)})
 
+
+        console.log(this.state.Name)
+        console.log(this.state.orgID)
 
         fetch("http://localhost:3010/api/room/createRoom", {
             method: 'POST',
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-              Name: this.state.name,
+              Name: this.state.Name,
               orgID: this.state.orgID,
 
             })
-          });
+            
+          })
+
       }
 
   render() {
@@ -70,10 +77,10 @@ class CreateRoomDiv extends Component {
 
    <Form onSubmit={this.handleSubmit}>
         <label htmlFor="Name">Enter Room Name</label>
-        <input id="Name" name="Name" type="text" />
+        <input id="Name" name="Name" type="text" onChange={this.handleInputChange}  />
 
         <label htmlFor="orgID">Enter your Organization ID</label>
-        <input id="orgID" name="orgID" type="text" />
+        <input id="orgID" name="orgID" type="text" onChange={this.handleInputChange}  />
 
         <button>Create Room!</button>
       </Form>
