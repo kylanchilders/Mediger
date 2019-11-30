@@ -76,22 +76,18 @@ class CreateRoomDiv extends Component {
             </div>
 
    <Form onSubmit={this.handleSubmit}>
-        <label htmlFor="Name">Enter Room Name</label>
-        <input id="Name" name="Name" type="text" onChange={this.handleInputChange}  />
-
-        <label htmlFor="orgID">Enter your Organization ID</label>
-        <input id="orgID" name="orgID" type="text" onChange={this.handleInputChange}  />
-
-        <button>Create Room!</button>
+   <Form.Group>
+          <Form.Label>Enter Room Name</Form.Label>
+          <Form.Control type="input" name="Name" onChange={this.handleInputChange}/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Enter your Organization ID</Form.Label>
+          <Form.Control type="input" name="orgID" onChange={this.handleInputChange}/>
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Create Room!
+  </Button>
       </Form>
-      <Form>
-      {this.state.res && (
-        	<div className="res-block">
-            <h3>Data to be sent:</h3>
-            <pre>FormData {this.state.res}</pre>
-        	</div>
-        )}
-        </Form>
         </div>
 
     )
