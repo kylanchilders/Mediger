@@ -6,35 +6,39 @@ import { Nav, NavItem, Navbar, NavDropdown, DropdownItem } from 'react-bootstrap
 import { NavLink } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 
-function stringifyFormData(fd) {
-    const data = {};
-      for (let key of fd.keys()) {
-        data[key] = fd.get(key);
-    }
-    return JSON.stringify(data, null, 2);
-  }
+
 class CreateRoomDiv extends Component {
     constructor() {
         super();
-        this.state = {};
+        this.state = {
+            name: '',
+            orgID: ''
+        };
         this.handleSubmit = this.handleSubmit.bind(this);
       }
     
       handleSubmit(event) {
         event.preventDefault();
         const data = new FormData(event.target);
-        console.log(this.data)
+
         console.log(...data)
         
         this.setState({
-            res: stringifyFormData(data)})
-            console.log(this.state)
-            console.log(...data)
+            res: (data)})
 
-        fetch("http://localhost:3010/api/createRoom", {
-          method: 'POST',
-          body: data,
-        });
+
+        fetch("http://localhost:3010/api/room/createRoom", {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              Name: this.state.name,
+              orgID: this.state.orgID,
+
+            })
+          });
       }
 
   render() {
