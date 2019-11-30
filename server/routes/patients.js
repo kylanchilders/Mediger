@@ -1,5 +1,5 @@
-import express from 'express';
-import models from '../models';
+var express = require("express");
+var models = require("../models");
 
 const router = express.Router();
 
@@ -7,7 +7,7 @@ const router = express.Router();
 /**
  * Get all patient
  */
-router.get('/patient/', (req, res) => {
+router.get('/', (req, res) => {
 	models.patient.findAll({        
 		order: ['id', 'ASC']
 	}).then(patient => {
@@ -21,7 +21,7 @@ router.get('/patient/', (req, res) => {
 /**
  * Get patient by ID
  */
-router.get('/patient/:name', (req, res) => {
+router.get('/:name', (req, res) => {
 	let error = null;
 	let id = req.params.name || null;
 
@@ -43,7 +43,7 @@ router.get('/patient/:name', (req, res) => {
 /**
  * Insert new patient
  */
-router.post('/patient/', (req, res) => {
+router.post('/', (req, res) => {
 	let { First_Name, Last_Name, Date_Of_Birth, Address, City, State, Zip_Code, Email, OrgID } = req.body;
 	models.patient
 		.build({ First_Name, Last_Name, Date_Of_Birth, Address, City, State, Zip_Code, Email, OrgID })
@@ -55,7 +55,7 @@ router.post('/patient/', (req, res) => {
 /**
  * Update patient by ID
  */
-router.put('/patient/:id', (req, res) => {
+router.put('/:id', (req, res) => {
 	let { id, First_Name, Last_Name, Date_Of_Birth, Address, City, State, Zip_Code, Email, OrgID } = req.body;
 	models.patient
 		.update({ First_Name, Last_Name, Date_Of_Birth, Address, City, State, Zip_Code, Email, OrgID }, { where: { id } })
@@ -63,7 +63,7 @@ router.put('/patient/:id', (req, res) => {
 		.catch((err) => res.status(400).json({ success: false, errors: { globals: "Oops, something wrong happened.." } }));
 });
 // Update Patient to a Room and Update room availability 
-router.put('/patient/room/:id', (req, res) => {
+router.put('/room/:id', (req, res) => {
 	let { id, roomID } = req.body;
 	models.patient
 		.update({ roomID }, { where: { id } })
@@ -74,7 +74,7 @@ router.put('/patient/room/:id', (req, res) => {
 /**
  * Delete patient by ID
  */
-router.delete('/patient/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
 	let id = req.params.id;
 	models.patient
 		.destroy({ where: { id } })
@@ -82,4 +82,4 @@ router.delete('/patient/:id', (req, res) => {
 		.catch((err) => res.status(500).json({ success: false, errors: { globals: err } }));
 });
 
-export default router;
+module.exports = router
