@@ -44,9 +44,10 @@ router.get('/:id', (req, res) => {
  * Insert new organization
  */
 router.post('/', (req, res) => {
-	let { Name, Address, City, State, Zip_Code, Email } = req.body;
+	console.log(req.body);
+	let { Name, Address, City, State, Zip_Code, Email, Phone_Number } = req.body;
 	models.organization
-		.build({ Name, Address, City, State, Zip_Code, Email })
+		.build({ Name, Address, City, State, Zip_Code, Email, Phone_Number })
 		.save()
 		.then(() => res.json({ success: true }))
 		.catch((err) => res.status(400).json({ success: false, errors: { globals: err } }));
