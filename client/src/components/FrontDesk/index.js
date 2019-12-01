@@ -3,6 +3,11 @@ import "./style.css";
 import Table from 'react-bootstrap/Table'
 import { Nav, NavItem, Navbar, NavDropdown, DropdownItem } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import FrontDeskForm from "../FrontDeskForm";
+
+
+
+
 const FrontDeskDiv = () => {
     return (
         <div className="frontDeskDiv" >
@@ -31,32 +36,7 @@ const FrontDeskDiv = () => {
                 </Navbar>
            
         </div>
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>DateOfBirth</th>
-                        <th>Address</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                   
-                </tbody>
-            </Table>
+           <FrontDeskForm />
         </div>
 
     )
