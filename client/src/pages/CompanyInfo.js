@@ -8,9 +8,6 @@ function CompanyInfo() {
         <div>
         <Header />
         <CompanyInfoFormDiv />
-        <br></br>
-        <br></br>
-        <br></br>
         <FooterDiv/>
         </div>
     )

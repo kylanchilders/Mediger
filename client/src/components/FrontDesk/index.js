@@ -11,9 +11,6 @@ const FrontDeskDiv = () => {
                 <Navbar fluid="true" inverse="true" >
                     <Navbar.Collapse>
                         <Navbar.Text className="nt">
-                            <NavLink className="nl" to="/Home">
-                                Home
-                        </NavLink>
                             <NavLink className="nl" to="/PatientList">
                                 PatientList
                         </NavLink>

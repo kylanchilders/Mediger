@@ -4,7 +4,7 @@ import "./style.css";
 
 const MainDiv = () => {
     return(
-<Carousel autoPlay={true} fade="true" slideshowSpeed = {1000} className="mainCarousel">
+<Carousel autoPlay={true} fade="true" interval={1200} className="mainCarousel">
   <Carousel.Item className="ci" >
     <img
       className="d-block w-100 h-100"

@@ -8,9 +8,6 @@ function CreateRoom() {
         <div>
         <Header />
         <CreateRoomDiv />
-        <br></br>
-        <br></br>
-        <br></br>
         <FooterDiv/>
         </div>
     )

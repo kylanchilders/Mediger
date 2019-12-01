@@ -16,12 +16,9 @@ const logoSize ={
   width:'40px',
 }
 const borderToLink={
-  backgroundColor:'darkBlue',
+  
   color:'white',
-  border:'1px outset white',
-  marginRight:'20px',
-  width:'100px',
-  height:'40px'
+  
 }
 const Header = () => {
    
@@ -37,7 +34,7 @@ const Header = () => {
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav>
-    <img src={require('../../images/logo4.jpeg') } style={logoSize} alt="Logo"/> 
+    <h2 style={{fontSize:55,color:"red"}}>&#x2624;</h2>
     </Nav>
     <Nav className="ml-auto">
       <Nav.Link onClick={() => logoutWithRedirect({})} className="justify-content-end text-center" style={borderToLink}>LogOut</Nav.Link>
