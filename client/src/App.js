@@ -13,6 +13,7 @@ import PatientList from "./pages/PatientList";
 import CreateRoom from"./pages/CreateRoom.js";
 import CompanyInfo from"./pages/CompanyInfo"; 
 import FrontDesk from"./pages/FrontDesk";
+import Notes from"./pages/Notes";
 
 // styles
 import "./App.css";
@@ -42,6 +43,7 @@ const App = () => {
             <PrivateRoute path="/CreateRoom" exact component={CreateRoom} />
             <PrivateRoute path="/CompanyInfo" exact component={CompanyInfo} />
             <PrivateRoute path="/FrontDesk" exact component={FrontDesk} />
+            <PrivateRoute path="/Notes/:id" exact component={Notes} />
           </Switch>
     
        

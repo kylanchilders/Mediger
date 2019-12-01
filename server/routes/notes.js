@@ -8,8 +8,13 @@ const router = express.Router();
  * Get all notes for patients
  */
 router.get('/:id', (req, res) => {
-	models.notes.findAll({        
-	}).then(notes => {
+	console.log(req.params.id)
+	let id = req.params.id
+	models.notes.findAll({
+		where: {
+		  patientID: id
+		}
+	  }).then(notes => {
 		console.log(notes)
 			res.json(notes);
 
