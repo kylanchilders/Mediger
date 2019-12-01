@@ -11,6 +11,7 @@ class Notes extends Component {
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   componentDidMount() {
+    console.log(this.props.match.params.id)
     fetch("http://localhost:3010/api/notes/" + this.props.match.params.id, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
@@ -18,7 +19,8 @@ class Notes extends Component {
 
     }).then((res) => {
         res.json().then((data) => {
-            this.setState({ patients: data, First_Name: "", Last_Name: "", Date_Of_Birth: "", Address: "", City: "", State: "", Zip_Code: "", Email: "", orgID: "", RoomID: "" })
+            this.setState({ notes: data})
+            console.log(this.state)
         });
     });
 
@@ -48,7 +50,7 @@ class Notes extends Component {
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Authors</Link>
+            <Link to="/PatientList">← Back to Patients</Link>
           </Col>
         </Row>
       </Container>

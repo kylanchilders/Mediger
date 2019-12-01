@@ -108,7 +108,7 @@ class PatientDiv extends Component {
                     <List>
                         {this.state.patients.map(patients => (
                             <ListItem key={patients.id}>
-                                <Link to={"/api/notes/" + patients.id}>
+                                <Link to={"/Notes/" + patients.id}>
                                     <strong>
                                         {patients.First_Name} {patients.Last_Name} {patients.Address}  {patients.City}  {patients.State} {patients.Zip_Code} {patients.Email} {patients.orgID} {patients.RoomID}
                                     </strong>
