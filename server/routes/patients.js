@@ -10,7 +10,6 @@ const router = express.Router();
 router.get('/', (req, res) => {
 	models.patient.findAll({        
 	}).then(patient => {
-		console.log(patient)
 			res.json(patient);
 
 	})
@@ -19,9 +18,9 @@ router.get('/', (req, res) => {
 /**
  * Get patient by ID
  */
-router.get('/:name', (req, res) => {
+router.get('/:id', (req, res) => {
 	let error = null;
-	let id = req.params.name || null;
+	let id = req.params.id || null;
 
 	if (!id) error = "Invalid request.";
 	else if (Validator.isEmpty(id)) error = "Invalid request.";
@@ -42,9 +41,10 @@ router.get('/:name', (req, res) => {
  * Insert new patient
  */
 router.post('/', (req, res) => {
-	let { First_Name, Last_Name, Date_Of_Birth, Address, City, State, Zip_Code, Email, OrgID } = req.body;
+	console.log(req.body)
+	let { First_Name, Last_Name, Date_Of_Birth, Address, City, State, Zip_Code, Email, Phone_Number, orgID } = req.body;
 	models.patient
-		.build({ First_Name, Last_Name, Date_Of_Birth, Address, City, State, Zip_Code, Email, OrgID })
+		.build({ First_Name, Last_Name, Date_Of_Birth, Address, City, State, Zip_Code, Email, Phone_Number, orgID })
 		.save()
 		.then(() => res.json({ success: true }))
 		.catch((err) => res.status(400).json({ success: false, errors: { globals: err } }));
@@ -73,6 +73,7 @@ router.put('/room/:id', (req, res) => {
  * Delete patient by ID
  */
 router.delete('/:id', (req, res) => {
+	console.log(req)
 	let id = req.params.id;
 	models.patient
 		.destroy({ where: { id } })
