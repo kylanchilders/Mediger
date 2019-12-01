@@ -9,6 +9,7 @@ var rooms = require ("./routes/rooms");
 var patients = require ("./routes/patients");
 var orgUsers = require ("./routes/orgUsers");
 var organizations = require ("./routes/organizations");
+var notes = require ("./routes/notes");
 
 // Sets up the Express App
 // ================================================
@@ -41,7 +42,7 @@ app.use('/api/room/', rooms);
 app.use('/api/patient/', patients);
 app.use('/api/orgUser/', orgUsers);
 app.use('/api/organization/', organizations);
-
+app.use('/api/notes/', notes);
 
 
 // Middleware for errors
