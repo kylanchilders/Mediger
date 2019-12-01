@@ -10,10 +10,9 @@ const router = express.Router();
 router.get('/', (req, res) => {
 	models.patient.findAll({        
 	}).then(patient => {
-		if (patient && Object.keys(patient).length > 0)
-			res.json({ success: true, patient });
-		else
-			res.status(400).json({ success: false, error: "Patient found." });
+		console.log(patient)
+			res.json(patient);
+
 	})
 });
 
