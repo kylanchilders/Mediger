@@ -3,21 +3,6 @@ var models = require("../models");
 
 const router = express.Router();
 
-
-/**
- * Get all room
- */
-router.get('/', (req, res) => {
-	db.room.findAll({        
-		order: ['id', 'ASC']
-	}).then(room => {
-		if (room && Object.keys(room).length > 0)
-			res.json({ success: true, room });
-		else
-			res.status(400).json({ success: false, error: "room found." });
-	})
-});
-
 /**
  * Get room by ID
  */
@@ -62,6 +47,15 @@ router.put('/:id', (req, res) => {
 		.update({ Name, orgID }, { where: { id } })
 		.then(() => res.json({ success: true }))
 		.catch((err) => res.status(400).json({ success: false, errors: { globals: "Oops, something wrong happened.." } }));
+});
+
+//get available room list 
+router.get('/', (req, res) => {
+	models.room.findAll({ where: {Available: 1}       
+	}).then(rooms => {
+			res.json(rooms);
+
+	})
 });
 // Update room to a Room and Update room availability 
 router.put('/available/:id', (req, res) => {
