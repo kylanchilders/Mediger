@@ -5,11 +5,16 @@ import Jumbotron from "../components/Jumbotron";
 
 
 class Notes extends Component {
+
   state = {
-    notes: {}
-  };
+    notes: [],
+    patient: []
+  }
+
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
+
+
   componentDidMount() {
     console.log(this.props.match.params.id)
     fetch("http://localhost:3010/api/notes/" + this.props.match.params.id, {
@@ -20,20 +25,39 @@ class Notes extends Component {
     }).then((res) => {
         res.json().then((data) => {
             this.setState({ notes: data})
-            console.log(this.state)
+            console.log(this.state);
         });
     });
+    fetch("http://localhost:3010/api/patient/" + this.props.match.params.id, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
 
+
+    }).then((res) => {
+        res.json().then((data) => {
+            this.setState({ patient: data})
+            console.log(this.state);
+            
+        });
+    });
+    this.checkState()
+};
+
+checkState() {
+  console.log(this.state);
 }
 
   render() {
     return (
+      
       <Container fluid>
         <Row>
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {this.state.notes.title} by {this.state.notes.author}
+              {this.state.patient.map(patients => (
+            <p key={patients}>{patients.First_Name} {patients.Last_Name}</p>
+          ))}
               </h1>
             </Jumbotron>
           </Col>
@@ -41,10 +65,13 @@ class Notes extends Component {
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              <h1>Synopsis</h1>
-              <p>
-                {this.state.notes.synopsis}
-              </p>
+              <h1>Patient Notes</h1>
+
+<br></br>
+          {this.state.notes.map((notes, id) => (
+            <p key={id}>{notes.Note}</p>
+          ))}
+
             </article>
           </Col>
         </Row>

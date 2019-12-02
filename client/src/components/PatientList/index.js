@@ -113,7 +113,7 @@ class PatientDiv extends Component {
                                         {patients.First_Name} {patients.Last_Name} {patients.Address}  {patients.City}  {patients.State} {patients.Zip_Code} {patients.Email} {patients.orgID} {patients.RoomID}
                                     </strong>
                                 </Link>
-                                <DeleteBtn onClick={() => this.deletePatient(patients.id)} />
+                                <DeleteBtn onClick={() => { if (window.confirm('Are you sure you wish to delete this patient?')) this.deletePatient(patients.id)}} />
                             </ListItem>
                         ))}
                     </List>

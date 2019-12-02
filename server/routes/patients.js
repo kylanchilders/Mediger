@@ -18,22 +18,19 @@ router.get('/', (req, res) => {
 /**
  * Get patient by ID
  */
+
 router.get('/:id', (req, res) => {
-	let error = null;
-	let id = req.params.id || null;
+	console.log(req.params.id);
+	console.log("hello");
+	let id = req.params.id
+	models.patient.findAll({
+		where: {
+		  id: id
+		}
+	  }).then(data => {
+		console.log(data)
+			res.json(data);
 
-	if (!id) error = "Invalid request.";
-	else if (Validator.isEmpty(id)) error = "Invalid request.";
-	else if (!Validator.isInt(id)) error = "Value must be integer.";
-	else if (id <= 0) error = "Invalid value.";
-
-	if (error) res.status(400).json({ success: false, error: error, data: {} });
-
-	models.patient.findById(req.params.name).then(data => {
-		if (data)
-			res.json({ success: true, patient: data });
-		else
-			res.status(400).json({ success: false, error: "patient not found.", patient: {} });
 	})
 });
 
