@@ -21,5 +21,24 @@ router.get('/:id', (req, res) => {
 	})
 });
 
+router.delete('/:id', (req, res) => {
+	console.log(req)
+	let id = req.params.id;
+	models.notes
+		.destroy({ where: { id } })
+		.then((rowDeleted) => res.json({ success: true, deleted: rowDeleted }))
+		.catch((err) => res.status(500).json({ success: false, errors: { globals: err } }));
+});
+
+router.post('/:id', (req, res) => {
+	console.log(req.params.id);
+	let {Note, Date, userID, patientID} = req.body;
+	models.notes
+		.build({Note, Date, userID, patientID} )
+		.save()
+		.then(() => res.json({ success: true }))
+		.catch((err) => res.status(400).json({ success: false, errors: { globals: err } }));
+});
+
 
 module.exports = router
