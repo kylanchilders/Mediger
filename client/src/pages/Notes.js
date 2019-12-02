@@ -113,11 +113,14 @@ handleSubmit(event) {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h1>
-                {this.state.patient.map(patients => (
-                  <p key={patients}>{patients.First_Name} {patients.Last_Name}</p>
-                ))}
-              </h1>
+            <h1>
+                                {this.state.patient.map(patients => (
+                                    <p key={patients}>{patients.First_Name} {patients.Last_Name}</p>
+                                ))}
+                            </h1>
+                            <h4>Room Number: {this.state.patient.map(patients => (
+                                    <p key={patients}>{patients.roomID}</p>
+                                ))}</h4>
             </Jumbotron>
           </Col>
         </Row>
