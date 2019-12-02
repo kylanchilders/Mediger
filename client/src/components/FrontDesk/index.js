@@ -2,14 +2,16 @@ import React from "react";
 import "./style.css";
 import Table from 'react-bootstrap/Table'
 import { Nav, NavItem, Navbar, NavDropdown, DropdownItem } from 'react-bootstrap';
+import { Col, Row, Container } from "../Grid";
 import { NavLink } from 'react-router-dom';
 import FrontDeskForm from "../FrontDeskForm";
-
+import AvailableRoom from "../AvailableRoom";
 
 
 
 const FrontDeskDiv = () => {
     return (
+        
         <div className="frontDeskDiv" >
            
             <div className="sideBarMenuContainer">
@@ -36,7 +38,21 @@ const FrontDeskDiv = () => {
                 </Navbar>
            
         </div>
+        <div>
+        <Container fluid>
+        <Row>
+          <Col size= "md-12">
            <FrontDeskForm />
+           </Col>   
+        </Row>
+        <Row>
+
+           <Col size="md-12" className = "rooms">
+           <AvailableRoom />
+           </Col>
+        </Row>
+      </Container>
+      </div>
         </div>
 
     )
