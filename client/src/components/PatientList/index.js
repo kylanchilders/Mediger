@@ -7,7 +7,10 @@ import DeleteBtn from "../DeleteBtn";
 import { List, ListItem } from "../List";
 
 class PatientDiv extends Component {
+    constructor(props) {
+        super(props);
 
+    }
     state = {
         patients: [],
         id: '',

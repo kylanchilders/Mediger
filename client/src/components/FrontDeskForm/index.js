@@ -59,7 +59,8 @@ class FrontDeskForm extends Component {
         })
   
       })
-  
+      .then(res => this.componentDidMount())
+      .catch(err => console.log(err));
     }
   
     render() {
