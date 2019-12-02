@@ -13,14 +13,14 @@ class NoteDiv extends Component {
     }
     state = {
         notes: [],
-        patient: []
+        patient: [], 
     }
 
     // When this component mounts, grab the book with the _id of this.props.match.params.id
     // e.g. localhost:3000/books/599dcb67f0f16317844583fc
 
 
-    componentDidMount() {
+    componentWillMount() {
         fetch("http://localhost:3010/api/notes/" + this.props.match.params.id, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' },
@@ -55,7 +55,7 @@ class NoteDiv extends Component {
             headers: { 'Content-Type': 'application/json' },
 
         })
-            .then(res => this.componentDidMount())
+            .then(res => this.componentWillMount())
             .catch(err => console.log(err));
     };
 
@@ -71,7 +71,7 @@ class NoteDiv extends Component {
                 patientID: this.props.match.params.id
             })
         })
-            .then(res => this.componentDidMount())
+            .then(res => this.componentWillMount())
             .catch(err => console.log(err));
     };
 
@@ -87,6 +87,9 @@ class NoteDiv extends Component {
                                     <p key={patients}>{patients.First_Name} {patients.Last_Name}</p>
                                 ))}
                             </h1>
+                            <h4>Room Number: {this.state.patient.map(patients => (
+                                    <p key={patients}>{patients.roomID}</p>
+                                ))}</h4>
                         </Jumbotron>
                     </Col>
                 </Row>
