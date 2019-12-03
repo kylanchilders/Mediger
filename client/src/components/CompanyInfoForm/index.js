@@ -1,5 +1,5 @@
 import React , { Component } from "react";
-import { Form, Button, FormGroup } from 'react-bootstrap';
+import { Form, Button, FormGroup,Col } from 'react-bootstrap';
 import "./CompanyInfoForm.css";
 
 class CompanyInfoForm extends Component {
@@ -16,7 +16,7 @@ class CompanyInfoForm extends Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -57,33 +57,41 @@ class CompanyInfoForm extends Component {
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
-        <Form.Group>
+        
+          <Form.Row>
+            <Col> <Form.Group>
           <Form.Label>Organization Name</Form.Label>
           <Form.Control type="input" name="Name" onChange={this.handleInputChange}/>
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Organization Address</Form.Label>
+        </Form.Group></Col>
+            <Col>
+            <Form.Group>
+          <Form.Label>Contact </Form.Label>
+          <Form.Control type="input" name="Phone_Number" onChange={this.handleInputChange}/>
+        </Form.Group></Col>
+          </Form.Row>
+        <Form.Row>
+          <Col><Form.Group>
+          <Form.Label>Address</Form.Label>
           <Form.Control type="input" name="Address" onChange={this.handleInputChange}/>
-        </Form.Group>
-        <Form.Group>
+        </Form.Group></Col>
+          <Col> <Form.Group>
           <Form.Label>City</Form.Label>
           <Form.Control type="input" name="City" onChange={this.handleInputChange}/>
-        </Form.Group>
-        <Form.Group>
+        </Form.Group></Col>
+          </Form.Row> 
+        <Form.Row>
+          <Col><Form.Group>
           <Form.Label>State</Form.Label>
           <Form.Control type="input" name="State" onChange={this.handleInputChange}/>
-        </Form.Group>
-        <Form.Group>
+        </Form.Group></Col>
+          <Col><Form.Group>
           <Form.Label>Zip Code</Form.Label>
           <Form.Control type="input" name="Zip_Code" onChange={this.handleInputChange}/>
-        </Form.Group>
+        </Form.Group></Col>
+        </Form.Row>
         <Form.Group>
-          <Form.Label>Organization Contact Email</Form.Label>
+          <Form.Label>Organization Contact  Email</Form.Label>
           <Form.Control type="email" name="Email" onChange={this.handleInputChange}/>
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Organization Contact Phone Number</Form.Label>
-          <Form.Control type="input" name="Phone_Number" onChange={this.handleInputChange}/>
         </Form.Group>
         <Button variant="primary" type="submit">
           Update Info

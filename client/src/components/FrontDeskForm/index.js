@@ -67,9 +67,9 @@ class FrontDeskForm extends Component {
       return (
         <Form onSubmit={this.handleSubmit}>
           <Form.Group>
-            <Form.Label>First Name</Form.Label>
+            <Form.Label >First Name</Form.Label>
             <Form.Control type="input" name="First_Name" onChange={this.handleInputChange}/>
-            <Form.Label>Last Name</Form.Label>
+            <Form.Label >Last Name</Form.Label>
             <Form.Control type="input" name="Last_Name" onChange={this.handleInputChange}/>
             <Form.Label>Date Of Birth</Form.Label>
             <Form.Control type="input" name="Date_Of_Birth" onChange={this.handleInputChange}/>
