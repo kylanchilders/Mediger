@@ -1,8 +1,12 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "Jul@1989",
 
+=======
+    "password": "FloatingUnicornHorns",
+>>>>>>> b7c18755ba7fb61fb7d3dd4fa9fbd871acb45971
     "database": "mediger",
     "host": "127.0.0.1",
     "port": 3306,

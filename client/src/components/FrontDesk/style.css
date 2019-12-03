@@ -39,6 +39,7 @@ border-radius: 25px;
   width:89%;
   
 }
+
 .head
 {
   width:20%;
@@ -51,5 +52,10 @@ th{
 }
 td{
   overflow: hidden;
+}
+
+
+.rooms{
+    float:right;
 }
 

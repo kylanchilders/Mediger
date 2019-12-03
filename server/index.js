@@ -4,22 +4,50 @@
 // =================================================
 var express = require("express");
 var session = require ("express-session");
-var models = require ("./models");
-var bands = require ("./routes/api");
+var db = require ("./models");
+var rooms = require ("./routes/rooms");
+var patients = require ("./routes/patients");
+var orgUsers = require ("./routes/orgUsers");
+var organizations = require ("./routes/organizations");
+var notes = require ("./routes/notes");
+
 // Sets up the Express App
 // ================================================
 var app = express();
 var PORT = process.env.PORT || 3010;
 
 // Requiring our models for syncing
-var db = require("./models");
+
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(function(req, res, next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+	next();
+  });
+
+  app.all('/', function(req, res, next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "X-Requested-With");
+	res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+	next();
+   });
+
+
 // Static directory
 app.use(express.static("public"));
+
+// Routes // ========================================================
+app.use('/api/room/', rooms);
+app.use('/api/patient/', patients);
+app.use('/api/orgUser/', orgUsers);
+app.use('/api/organization/', organizations);
+app.use('/api/notes/', notes);
+
 
 // Middleware for errors
 app.use((req, res) => {
@@ -27,10 +55,10 @@ app.use((req, res) => {
 });
 
 // Sync database with Sequelize models
-models.sequelize.sync().then(function() {
-	if (process.env.NODE_ENV !== "test") {
-		console.log('Database connected!');
-	}
+db.sequelize.sync().then(function() {
+	app.listen(PORT, function() {
+		console.log("App listening on PORT " + PORT);
+	})
 }).catch(function(err) {
 	console.error(err, "Something went wrong, database is not connected!");
 });
@@ -40,8 +68,3 @@ models.sequelize.sync().then(function() {
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
-});
