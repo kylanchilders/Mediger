@@ -49,7 +49,7 @@ class NoteDiv extends Component {
 
     };
 
-    deletePatient = id => {
+    deleteNotes = id => {
         fetch("http://localhost:3010/api/notes/" + id, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
@@ -102,7 +102,7 @@ class NoteDiv extends Component {
                             {this.state.notes.map((notes, id) => (
                                 <p key={id}>{notes.Note}
 
-                                    <DeleteBtn onClick={() => { if (window.confirm('Are you sure you wish to delete this patient?')) this.deletePatient(notes.id) }} />
+                                    <DeleteBtn onClick={() => { if (window.confirm('Are you sure you wish to delete this patient?')) this.deleteNotes(notes.id) }} />
                                 </p>
                             ))}
 

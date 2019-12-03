@@ -21,7 +21,10 @@ class AvailableRoom extends Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.checkOut = this.checkOut.bind(this);
     }
+
+    
     componentDidMount() {
         fetch("http://localhost:3010/api/room/", {
             method: 'GET',
@@ -31,7 +34,6 @@ class AvailableRoom extends Component {
         }).then((res) => {
             res.json().then((data) => {
                 this.setState({ rooms: data })
-                console.log(this.state);
             });
         });
 
@@ -42,7 +44,7 @@ class AvailableRoom extends Component {
 
         }).then((res) => {
             res.json().then((data) => {
-                this.setState({ patients: data, First_Name: "", Last_Name: "", Date_Of_Birth: "", Address: "", City: "", State: "", Zip_Code: "", Email: "", orgID: "", RoomID: "" })
+                this.setState({ patients: data })
             });
         });
     }
@@ -54,24 +56,15 @@ class AvailableRoom extends Component {
         });
     };
 
-    handleSubmit(event) {
-        event.preventDefault();
-
-        const data = new FormData(event.target);
-
-        console.log(...data)
-
-
-        console.log(this.state)
-
-
-        fetch("http://localhost:3010/api/room/:id", {
-            method: 'POST',
+    handleSubmit = id => {
+        console.log(id)
+        fetch("http://localhost:3010/api/room/", {
+            method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 First_Name: this.state.First_Name,
                 Last_Name: this.state.Last_Name,
-                id: this.state.id,
+                id: id,
                 Available: 0
             })
 
@@ -80,7 +73,21 @@ class AvailableRoom extends Component {
             .catch(err => console.log(err));
     }
 
+    checkOut = id => {
+        console.log(id)
+        fetch("http://localhost:3010/api/room/", {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                id: id,
+                Available: 1
+            })
 
+        })
+            .then(res => console.log(res), this.componentDidMount())
+            .catch(err => console.log(err));
+    }
+    
     render() {
         return (
             <Table className="patientTable" striped bordered hover>
@@ -89,6 +96,7 @@ class AvailableRoom extends Component {
                         <th className="col-1">First Name</th>
                         <th className="col-1">Last Name</th>
                         <th className="col-2">Room Number</th>
+                        <th className="col-2">Available Rooms</th>
                     </tr>
                 </thead>
 
@@ -100,6 +108,7 @@ class AvailableRoom extends Component {
 
                                 <td className="col-1">{patients.First_Name}</td>
                                 <td className="col-1">{patients.Last_Name}</td>
+                                <td className="col-2">{patients.roomID}</td>
                                 <Col size="lg-2">
                                     <Dropdown className="dropDown" style={{ display: "inline" }}>
                                         <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -113,8 +122,8 @@ class AvailableRoom extends Component {
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 </Col>
-                                <td><Button>Check-In</Button></td>
-                                <td><Button>Check-Out</Button></td>
+                                <td><Button onClick={() => { this.handleSubmit(patients.roomID) }}>Check-In</Button></td>
+                                <td><Button onClick={() => { this.checkOut(patients.roomID) }}>Check-Out</Button></td>
                             </tr>
                         ))
                     ) : (
