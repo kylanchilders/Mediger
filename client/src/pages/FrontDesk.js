@@ -7,9 +7,6 @@ function FrontDesk() {
         <div>
         <Header />
        <FrontDeskDiv/>
-        <br></br>
-        <br></br>
-        <br></br>
         <FooterDiv/>
         </div>
     )

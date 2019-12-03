@@ -1,4 +1,16 @@
-.textPos
+.footerDiv
 {
     text-align: center;
+    vertical-align: middle;
+    color:darkblue;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    background: #FFFFFF;
+    background: -moz-linear-gradient(top, #FFFFFF 0%, #B5B3B3 100%);
+    background: -webkit-linear-gradient(top, #FFFFFF 0%, #B5B3B3 100%);
+    background: linear-gradient(to bottom, #FFFFFF 0%, #B5B3B3 100%);
+    position: "fixed";
+    left: 0;
+    height: 128px;
+    width: 100%;
 }

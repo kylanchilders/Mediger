@@ -7,9 +7,6 @@ function PatientList() {
         <div>
         <Header />
        <PatientDiv/>
-        <br></br>
-        <br></br>
-        <br></br>
         <FooterDiv/>
         </div>
     )

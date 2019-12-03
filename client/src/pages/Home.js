@@ -9,9 +9,6 @@ function Home() {
         <div>
         <NavBar />
         <MainDiv />
-        <br></br>
-        <br></br>
-        <br></br>
         <FooterDiv/>
         </div>
         
