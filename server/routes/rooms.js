@@ -58,8 +58,9 @@ router.get('/', (req, res) => {
 	})
 });
 // Update room to a Room and Update room availability 
-router.put('/available/:id', (req, res) => {
+router.put('/', (req, res) => {
 	let { id, Available } = req.body;
+	console.log(req.body);
 	models.room
 		.update({ Available }, { where: { id } })
 		.then(() => res.json({ success: true }))
