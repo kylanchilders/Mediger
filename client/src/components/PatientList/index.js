@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import Table from 'react-bootstrap/Table'
 import { Nav, NavItem, Navbar, NavDropdown, DropdownItem } from 'react-bootstrap';
+
 import { NavLink, Link } from 'react-router-dom';
 import DeleteBtn from "../DeleteBtn";
 import { List, ListItem } from "../List";
@@ -67,6 +68,7 @@ class PatientDiv extends Component {
                         </NavLink>
                                 <NavLink className="nl" to="/CreateRoom">
                                     CreateRoom
+>>>>>>> b7c18755ba7fb61fb7d3dd4fa9fbd871acb45971
                         </NavLink>
                                 <NavLink className="nl" to="/CompanyInfo">
                                     Company Info
