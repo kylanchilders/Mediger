@@ -98,9 +98,9 @@ class PatientDiv extends Component {
                    this.state.patients.map(patients => (
                        <tr className="d-flex" key={patients.id}>
                        {/* <ListItem key={patients.id}> */}
-                           <Link to={"/Notes/" + patients.id}>
-                               <td className="col-1">Notes</td>
-                               </Link>
+                           <td className="col-1"><Link to={"/Notes/" + patients.id}>
+                               Notes
+                               </Link></td>
                                <td className="col-1">{patients.First_Name}</td>
                                <td className="col-1">{patients.Last_Name}</td>
                                <td className="col-2">{patients.Date_Of_Birth}</td>

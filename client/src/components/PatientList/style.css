@@ -37,7 +37,6 @@ border-radius: 25px;
 {
     position: relative;
     left:15%;
-  width:89%;
   
 }
 
@@ -49,4 +48,5 @@ th{
 }
 td{
   overflow: hidden;
+  text-align: center;
 }
