@@ -6,6 +6,23 @@
    float:left;
    
 }
+.r1
+{
+  height:10rem;
+}
+.r2
+{
+
+  border : 1px inset white;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+background-color: lightblue;
+
+}
+.col21
+{
+  text-align: center;
+}
 .mainDiv
 {
     background-image:url("../../images/carouselImage3.jpeg");
