@@ -79,40 +79,42 @@ class PatientDiv extends Component {
                 </div>
                 <Table className="patientTable" striped bordered hover>
                     <thead>
-                        <tr className="d-flex">
-                            <th className="col-1">Notes</th>
-                            <th className="col-1">First Name</th>
-                            <th className="col-1">Last Name</th>
-                            <th className="col-2">DateOfBirth</th>
-                            <th className="col-2">Address</th>
-                            <th className="col-1">City</th>
-                            <th className="col-1">State</th>
-                            <th className="col-1">ZipCode</th>
-                            <th className="col-2">Email</th>
-
-                            
+                        <tr>
+                            <th style={{width:"20px"}}>Notes</th>
+                            <th >First Name</th>
+                            <th>Last Name</th>
+                            <th>DateOfBirth</th>
+                            <th>Address</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>ZipCode</th>
+                            <th>Email</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                     {this.state.patients.length ? (
                    this.state.patients.map(patients => (
-                       <tr className="d-flex" key={patients.id}>
+                       <tr key={patients.id}>
                        {/* <ListItem key={patients.id}> */}
-                           <td className="col-1"><Link to={"/Notes/" + patients.id}>
+                           <td style={{width:"5rem"}}>
+                           <Link to={"/Notes/" + patients.id}>
                                Notes
-                               </Link></td>
-                               <td className="col-1">{patients.First_Name}</td>
-                               <td className="col-1">{patients.Last_Name}</td>
-                               <td className="col-2">{patients.Date_Of_Birth}</td>
-                               <td className="col-2">{patients.Address}</td>
-                               <td className="col-1">{patients.City}</td>
-                               <td className="col-1">{patients.State}</td>
-                               <td className="col-1">{patients.Zip_Code}</td>
-                               <td className="col-2">{patients.Email}</td>
+                               </Link>
+                              
+                               </td>
+                               <td style={{width:"8rem"}}>{patients.First_Name}</td>
+                               <td style={{width:"8rem"}}>{patients.Last_Name}</td>
+                               <td style={{width:"5rem"}}>{patients.Date_Of_Birth}</td>
+                               <td style={{width:"10rem"}}>{patients.Address}</td>
+                               <td style={{width:"3rem"}}>{patients.City}</td>
+                               <td style={{width:"2rem"}}>{patients.State}</td>
+                               <td style={{width:"3rem"}}>{patients.Zip_Code}</td>
+                               <td style={{width:"3rem"}}>{patients.Email}</td>
                                {/* <strong>
                                    {patients.First_Name} {patients.Last_Name} {patients.Address}  {patients.City}  {patients.State} {patients.Zip_Code} {patients.Email} {patients.orgID} {patients.RoomID}
                                </strong> */}
-                           <td className="col-1"><DeleteBtn onClick={() => { if (window.confirm('Are you sure you wish to delete this patient?')) this.deletePatient(patients.id)}} /></td>
+                               <td > <strong><DeleteBtn style={{float:"left"}} onClick={() => { if (window.confirm('Are you sure you wish to delete this patient?')) this.deletePatient(patients.id)}} /></strong></td>
                        </tr>
                    ))
            ) : (
