@@ -37,7 +37,6 @@ border-radius: 25px;
 {
     position: relative;
     left:15%;
-  
 }
 
 th{
@@ -45,8 +44,15 @@ th{
     overflow: hidden;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
+    background-color: darkblue;
+    color: white;
 }
 td{
   overflow: hidden;
   text-align: center;
+  font-size: 15px;
+  background-color:lightblue;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
 }
+
