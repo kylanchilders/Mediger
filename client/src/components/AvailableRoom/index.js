@@ -64,6 +64,7 @@ class AvailableRoom extends Component {
             body: JSON.stringify({
                 First_Name: this.state.First_Name,
                 Last_Name: this.state.Last_Name,
+                patientID: this.state.id,
                 id: id,
                 Available: 0
             })
@@ -109,19 +110,23 @@ class AvailableRoom extends Component {
                                 <td className="col-1">{patients.First_Name}</td>
                                 <td className="col-1">{patients.Last_Name}</td>
                                 <td className="col-2">{patients.roomID}</td>
-                                <Col size="lg-2">
+                                 <Col size="lg-2">
                                     <Dropdown className="dropDown" style={{ display: "inline" }}>
                                         <Dropdown.Toggle variant="success" id="dropdown-basic">
                                             Rooms Available
                                     </Dropdown.Toggle>
 
                                         <Dropdown.Menu>
-                                            <Dropdown.Item href="#/action-1">Room1</Dropdown.Item>
-                                            <Dropdown.Item href="#/action-2">Room2</Dropdown.Item>
-                                            <Dropdown.Item href="#/action-3">Room3</Dropdown.Item>
+                                        {this.state.rooms.length ? (
+                        this.state.rooms.map(rooms => (
+                                            <Dropdown.Item key={rooms.id} >{rooms.id}</Dropdown.Item>
+                                            ))
+                                            ) : (
+                                                    <h3>No Rooms to Assign</h3>
+                                                )}
                                         </Dropdown.Menu>
                                     </Dropdown>
-                                </Col>
+                                </Col>                        
                                 <td><Button onClick={() => { this.handleSubmit(patients.roomID) }}>Check-In</Button></td>
                                 <td><Button onClick={() => { this.checkOut(patients.roomID) }}>Check-Out</Button></td>
                             </tr>
