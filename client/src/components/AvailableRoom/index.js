@@ -22,6 +22,30 @@ class AvailableRoom extends Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+    componentDidMount() {
+        fetch("http://localhost:3010/api/room/", {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+
+
+        }).then((res) => {
+            res.json().then((data) => {
+                this.setState({ rooms: data })
+                console.log(this.state);
+            });
+        });
+
+        fetch("http://localhost:3010/api/patient/", {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+
+
+        }).then((res) => {
+            res.json().then((data) => {
+                this.setState({ patients: data, First_Name: "", Last_Name: "", Date_Of_Birth: "", Address: "", City: "", State: "", Zip_Code: "", Email: "", orgID: "", RoomID: "" })
+            });
+        });
+    }
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -55,30 +79,7 @@ class AvailableRoom extends Component {
             .then(res => this.componentDidMount())
             .catch(err => console.log(err));
     }
-    componentDidMount() {
-        fetch("http://localhost:3010/api/room/", {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
 
-
-        }).then((res) => {
-            res.json().then((data) => {
-                this.setState({ rooms: data })
-                console.log(this.state);
-            });
-        });
-
-        fetch("http://localhost:3010/api/patient/", {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-
-
-        }).then((res) => {
-            res.json().then((data) => {
-                this.setState({ patients: data, First_Name: "", Last_Name: "", Date_Of_Birth: "", Address: "", City: "", State: "", Zip_Code: "", Email: "", orgID: "", RoomID: "" })
-            });
-        });
-    }
 
     render() {
         return (

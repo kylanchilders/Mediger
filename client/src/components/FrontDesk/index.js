@@ -39,9 +39,6 @@ const FrontDeskDiv = () => {
             
            <Container style={{paddingRight: "15px",paddingLeft: "15px",marginRight: "5rem",marginLeft: "auto"}}>
            <Row  >
-             
-
-           
                     
                         <Col size="lg-5" >
                             <FrontDeskForm  className="ff"/>
