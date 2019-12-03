@@ -1,5 +1,5 @@
-import express from 'express';
-import models from '../models';
+var express = require("express");
+var models = require("../models");
 
 const router = express.Router();
 
@@ -7,7 +7,7 @@ const router = express.Router();
 /**
  * Get all orgUsers
  */
-router.get('/orgUsers/', (req, res) => {
+router.get('/', (req, res) => {
 	models.orgUsers.findAll({
             where:{ orgID  } ,        
 		order: ['id', 'ASC']
@@ -22,7 +22,7 @@ router.get('/orgUsers/', (req, res) => {
 /**
  * Get orgUsers by ID
  */
-router.get('/orgUsers/:id', (req, res) => {
+router.get('/:id', (req, res) => {
 	let error = null;
 	let id = req.params.id || null;
 
@@ -44,7 +44,7 @@ router.get('/orgUsers/:id', (req, res) => {
 /**
  * Insert new orgUsers
  */
-router.post('/orgUsers/', (req, res) => {
+router.post('/', (req, res) => {
 	let { Role, First_Name, Last_Name, username, password, Email, orgID } = req.body;
 	models.orgUsers
 		.build({ Role, First_Name, Last_Name, username, password, Email, orgID })
@@ -56,7 +56,7 @@ router.post('/orgUsers/', (req, res) => {
 /**
  * Update orgUsers by ID
  */
-router.put('/orgUsers/:id', (req, res) => {
+router.put('/:id', (req, res) => {
 	let { id, Role, First_Name, Last_Name, username, password, Email, orgID } = req.body;
 	models.orgUsers
 		.update({ Role, First_Name, Last_Name, username, password, Email, orgID }, { where: { id } })
@@ -67,7 +67,7 @@ router.put('/orgUsers/:id', (req, res) => {
 /**
  * Delete orgUsers by ID
  */
-router.delete('/orgUsers/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
 	let id = req.params.id;
 	models.orgUsers
 		.destroy({ where: { id } })
@@ -75,4 +75,4 @@ router.delete('/orgUsers/:id', (req, res) => {
 		.catch((err) => res.status(500).json({ success: false, errors: { globals: err } }));
 });
 
-export default router;
+module.exports = router

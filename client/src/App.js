@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Router, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -13,6 +14,7 @@ import PatientList from "./pages/PatientList";
 import CreateRoom from"./pages/CreateRoom.js";
 import CompanyInfo from"./pages/CompanyInfo"; 
 import FrontDesk from"./pages/FrontDesk";
+import Notes from"./pages/Notes";
 
 // styles
 import "./App.css";
@@ -29,6 +31,7 @@ const App = () => {
   }
 
   return (
+    
     <Router history={history}>
       <div id="app" className="d-flex flex-column h-100">
     
@@ -41,6 +44,7 @@ const App = () => {
             <PrivateRoute path="/CreateRoom" exact component={CreateRoom} />
             <PrivateRoute path="/CompanyInfo" exact component={CompanyInfo} />
             <PrivateRoute path="/FrontDesk" exact component={FrontDesk} />
+            <PrivateRoute path="/Notes/:id" exact component={Notes} />
           </Switch>
     
        

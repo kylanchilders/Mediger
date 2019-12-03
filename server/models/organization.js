@@ -25,6 +25,9 @@ module.exports = function(sequelize, DataTypes) {
       Email: {
         type: DataTypes.STRING(50),
         isEmail: true
+      },
+      Phone_Number: {
+        type: DataTypes.STRING(50)
       }
     });
     return Organization;

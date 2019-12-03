@@ -1,27 +1,12 @@
-import express from 'express';
-import models from '../models';
+var express = require("express");
+var models = require("../models");
 
 const router = express.Router();
-
-
-/**
- * Get all room
- */
-router.get('/room/', (req, res) => {
-	models.room.findAll({        
-		order: ['id', 'ASC']
-	}).then(room => {
-		if (room && Object.keys(room).length > 0)
-			res.json({ success: true, room });
-		else
-			res.status(400).json({ success: false, error: "room found." });
-	})
-});
 
 /**
  * Get room by ID
  */
-router.get('/room/:id', (req, res) => {
+router.get('/:id', (req, res) => {
 	let error = null;
 	let id = req.params.id || null;
 
@@ -43,10 +28,11 @@ router.get('/room/:id', (req, res) => {
 /**
  * Insert new room
  */
-router.post('/room/', (req, res) => {
-	let { Name, OrgID } = req.body;
+router.post('/createRoom', (req, res) => {
+	console.log(req.body);
+	let { Name, orgID } = req.body;
 	models.room
-		.build({ Name, OrgID })
+		.build({ Name, orgID })
 		.save()
 		.then(() => res.json({ success: true }))
 		.catch((err) => res.status(400).json({ success: false, errors: { globals: err } }));
@@ -55,15 +41,24 @@ router.post('/room/', (req, res) => {
 /**
  * Update room by ID
  */
-router.put('/room/:id', (req, res) => {
-	let { id, Name, OrgID } = req.body;
+router.put('/:id', (req, res) => {
+	let { id, Name, orgID } = req.body;
 	models.room
-		.update({ Name, OrgID }, { where: { id } })
+		.update({ Name, orgID }, { where: { id } })
 		.then(() => res.json({ success: true }))
 		.catch((err) => res.status(400).json({ success: false, errors: { globals: "Oops, something wrong happened.." } }));
 });
+
+//get available room list 
+router.get('/', (req, res) => {
+	models.room.findAll({ where: {Available: 1}       
+	}).then(rooms => {
+			res.json(rooms);
+
+	})
+});
 // Update room to a Room and Update room availability 
-router.put('/room/available/:id', (req, res) => {
+router.put('/available/:id', (req, res) => {
 	let { id, Available } = req.body;
 	models.room
 		.update({ Available }, { where: { id } })
@@ -74,7 +69,7 @@ router.put('/room/available/:id', (req, res) => {
 /**
  * Delete room by ID
  */
-router.delete('/room/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
 	let id = req.params.id;
 	models.room
 		.destroy({ where: { id } })
@@ -82,4 +77,4 @@ router.delete('/room/:id', (req, res) => {
 		.catch((err) => res.status(500).json({ success: false, errors: { globals: err } }));
 });
 
-export default router;
+module.exports = router
