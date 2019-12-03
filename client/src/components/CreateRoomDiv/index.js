@@ -14,10 +14,10 @@ const CreateRoomDiv = () => {
                     <Navbar.Collapse>
                         <Navbar.Text className="nt">
                             <NavLink className="nl" to="/PatientList">
-                                PatientList
+                                Patient List
                         </NavLink>
                             <NavLink className="nl" to="/CreateRoom">
-                                CreateRoom
+                                Create Room
                         </NavLink>
                             <NavLink className="nl" to="/CompanyInfo">
                                 Company Info

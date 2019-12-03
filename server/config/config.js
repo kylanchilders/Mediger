@@ -10,7 +10,7 @@ module.exports =
   },
   "test": {
     "username": "root",
-    "password": "FloatingUnicornHorns",
+    "password": "Jul@1989",
     "database": "reporting",
     "host": "127.0.0.1",
     "port": 3306,

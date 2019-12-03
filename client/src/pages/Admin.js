@@ -8,9 +8,6 @@ function Admin() {
         <div>
         <Header />
         <ProfileDiv />
-        <br></br>
-        <br></br>
-        <br></br>
         <FooterDiv/>
         </div>
     )

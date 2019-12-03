@@ -1,11 +1,11 @@
 
-.sideBarMenuContainer {
+/* .sideBarMenuContainer {
     position: fixed;
     border: 1px outset white;
    height: 600px;
    float:left;
    
-}
+} */
 .patientDiv
 {
     background-image:url("../../images/carouselImage3.jpeg");
@@ -22,7 +22,7 @@
 }
 /*Remove rounded coners*/
 
-.nl
+/* .nl
 {
     display: block;
     margin-bottom: 90px;
@@ -31,12 +31,12 @@
     text-align: center;
 background-color: whitesmoke;
 border-radius: 25px;
-}
+} */
 
 .patientTable
 {
     position: relative;
-    left:11%;
+    left:15%;
   width:89%;
   
 }
