@@ -79,16 +79,16 @@ class PatientDiv extends Component {
                 </div>
                 <Table className="patientTable" striped bordered hover>
                     <thead>
-                        <tr>
-                            <th className="head">Notes</th>
-                            <th className="head">First Name</th>
-                            <th className="head">Last Name</th>
-                            <th className="head">DateOfBirth</th>
-                            <th className="head">Address</th>
-                            <th className="head">City</th>
-                            <th className="head">State</th>
-                            <th className="head">ZipCode</th>
-                            <th className="head">Email</th>
+                        <tr className="d-flex">
+                            <th className="col-1">Notes</th>
+                            <th className="col-1">First Name</th>
+                            <th className="col-1">Last Name</th>
+                            <th className="col-2">DateOfBirth</th>
+                            <th className="col-2">Address</th>
+                            <th className="col-1">City</th>
+                            <th className="col-1">State</th>
+                            <th className="col-1">ZipCode</th>
+                            <th className="col-2">Email</th>
 
                             
                         </tr>
@@ -96,23 +96,23 @@ class PatientDiv extends Component {
                     <tbody>
                     {this.state.patients.length ? (
                    this.state.patients.map(patients => (
-                       <tr key={patients.id}>
+                       <tr className="d-flex" key={patients.id}>
                        {/* <ListItem key={patients.id}> */}
                            <Link to={"/Notes/" + patients.id}>
-                               <td>Notes</td>
+                               <td className="col-1">Notes</td>
                                </Link>
-                               <td>{patients.First_Name}</td>
-                               <td>{patients.Last_Name}</td>
-                               <td>{patients.Date_Of_Birth}</td>
-                               <td>{patients.Address}</td>
-                               <td>{patients.City}</td>
-                               <td>{patients.State}</td>
-                               <td>{patients.Zip_Code}</td>
-                               <td>{patients.Email}</td>
+                               <td className="col-1">{patients.First_Name}</td>
+                               <td className="col-1">{patients.Last_Name}</td>
+                               <td className="col-2">{patients.Date_Of_Birth}</td>
+                               <td className="col-2">{patients.Address}</td>
+                               <td className="col-1">{patients.City}</td>
+                               <td className="col-1">{patients.State}</td>
+                               <td className="col-1">{patients.Zip_Code}</td>
+                               <td className="col-2">{patients.Email}</td>
                                {/* <strong>
                                    {patients.First_Name} {patients.Last_Name} {patients.Address}  {patients.City}  {patients.State} {patients.Zip_Code} {patients.Email} {patients.orgID} {patients.RoomID}
                                </strong> */}
-                           <td><DeleteBtn onClick={() => { if (window.confirm('Are you sure you wish to delete this patient?')) this.deletePatient(patients.id)}} /></td>
+                           <td className="col-1"><DeleteBtn onClick={() => { if (window.confirm('Are you sure you wish to delete this patient?')) this.deletePatient(patients.id)}} /></td>
                        </tr>
                    ))
            ) : (
