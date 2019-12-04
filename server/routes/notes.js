@@ -25,7 +25,7 @@ router.delete('/:id', (req, res) => {
 	console.log(req)
 	let id = req.params.id;
 	models.notes
-		.destroy({ where: { id } })
+		.destroy({ where: { patientID: id } })
 		.then((rowDeleted) => res.json({ success: true, deleted: rowDeleted }))
 		.catch((err) => res.status(500).json({ success: false, errors: { globals: err } }));
 });
