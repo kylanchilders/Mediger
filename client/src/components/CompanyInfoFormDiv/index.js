@@ -10,6 +10,8 @@ import CompanyInfoForm from '../CompanyInfoForm'
 const CompanyInfoFormDiv = () => {
     return (
         <div className="mainDiv" >
+             <div className="row">
+                <div className="col-lg-4">
             <div className="sideBarMenuContainer">
                 <Navbar fluid="true" inverse="true" >
                     <Navbar.Collapse>
@@ -30,7 +32,19 @@ const CompanyInfoFormDiv = () => {
                     </Navbar.Collapse>
                 </Navbar>
             </div>
+            </div>
+            <div className ="col-lg-5">
+            <div className="row  cfr1">
+
+            </div>
+            <div className="row" style={{color:"Red",fontFamily:"TimesNewRoman",fontSize:"20px"}}>
+            <div className ="col-lg-12">
             <CompanyInfoForm />
+            </div>
+            </div>
+            
+            </div>
+            </div>
         </div>
 
     )

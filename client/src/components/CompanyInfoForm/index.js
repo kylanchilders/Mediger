@@ -1,6 +1,6 @@
 import React , { Component } from "react";
 import { Form, Button, FormGroup,Col } from 'react-bootstrap';
-import "./CompanyInfoForm.css";
+import "./style.css";
 
 class CompanyInfoForm extends Component {
   constructor() {
@@ -56,45 +56,45 @@ class CompanyInfoForm extends Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
-        
+      <Form className ="companyForm"onSubmit={this.handleSubmit}>
           <Form.Row>
             <Col> <Form.Group>
-          <Form.Label>Organization Name</Form.Label>
+          <Form.Label><strong>Organization Name</strong></Form.Label>
           <Form.Control type="input" name="Name" onChange={this.handleInputChange}/>
         </Form.Group></Col>
             <Col>
             <Form.Group>
-          <Form.Label>Contact </Form.Label>
+          <Form.Label><strong>Contact </strong></Form.Label>
           <Form.Control type="input" name="Phone_Number" onChange={this.handleInputChange}/>
         </Form.Group></Col>
           </Form.Row>
         <Form.Row>
           <Col><Form.Group>
-          <Form.Label>Address</Form.Label>
+          <Form.Label><strong>Address</strong></Form.Label>
           <Form.Control type="input" name="Address" onChange={this.handleInputChange}/>
         </Form.Group></Col>
           <Col> <Form.Group>
-          <Form.Label>City</Form.Label>
+          <Form.Label><strong>City</strong></Form.Label>
           <Form.Control type="input" name="City" onChange={this.handleInputChange}/>
         </Form.Group></Col>
           </Form.Row> 
         <Form.Row>
           <Col><Form.Group>
-          <Form.Label>State</Form.Label>
+          <Form.Label><strong>State</strong></Form.Label>
           <Form.Control type="input" name="State" onChange={this.handleInputChange}/>
         </Form.Group></Col>
           <Col><Form.Group>
-          <Form.Label>Zip Code</Form.Label>
+          <Form.Label><strong>Zip Code</strong></Form.Label>
           <Form.Control type="input" name="Zip_Code" onChange={this.handleInputChange}/>
         </Form.Group></Col>
         </Form.Row>
         <Form.Group>
-          <Form.Label>Organization Contact  Email</Form.Label>
+          <Form.Label><strong>Organization Contact  Email</strong></Form.Label>
           <Form.Control type="email" name="Email" onChange={this.handleInputChange}/>
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="danger" type="submit" style={{fontFamily:"TimesNewRoman"}}><strong>
           Update Info
+          </strong>
   </Button>
       </Form>
     )

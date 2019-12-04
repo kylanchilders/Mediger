@@ -37,15 +37,18 @@ const FrontDeskDiv = () => {
             </div>
             <AvailableRoom />
             
-           <Container style={{paddingRight: "15px",paddingLeft: "15px",marginRight: "5rem",marginLeft: "auto"}}>
-           <Row  >
-                    
-                        <Col size="lg-5" >
-                            <FrontDeskForm  className="ff"/>
-                        </Col>
-
-                    </Row>
-                </Container>
+         <div>
+             <div className="row" style={{position:"relative",left:"15%"}}>
+                 <div className="col-lg-2"></div>
+                 <div className="col-lg-6">
+                     <FrontDeskForm/>
+                 
+                 </div>
+             </div>
+        
+         </div>
+                          
+                      
             </div>
         
 

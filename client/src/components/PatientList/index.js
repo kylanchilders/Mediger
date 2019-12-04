@@ -124,11 +124,13 @@ class PatientDiv extends Component {
                                </strong> */}
                                <td > <strong><DeleteBtn style={{float:"left"}} onClick={() => { if (window.confirm('Are you sure you wish to delete this patient?')) this.deletePatient(patients.id)}} /></strong></td>
                        </tr>
+                     
                    ))
+                  
            ) : (
                    <h3>No Results to Display</h3>
                )}
-                    </tbody>
+                  </tbody>   
                    
                 </Table>
                 {/* {this.state.patients.length ? (
@@ -145,7 +147,7 @@ class PatientDiv extends Component {
                         ))}
                     </List>
                 ) : (
-                        <h3>No Results to Display</h3>
+                        // <h3>No Results to Display</h3>
                     )} */}
             </div>
 
