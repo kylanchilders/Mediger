@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import './style.css';
 import config from '../../config';
 // import Glyphicon from 'react-bootstrap/lib/Glyphicon';
-import { Nav, NavItem, Navbar, NavDropdown, DropdownItem } from 'react-bootstrap';
+import { Nav, NavItem, Navbar, NavDropdown, DropdownItem,Card } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 
@@ -76,8 +76,12 @@ class CreateRoomDiv extends Component {
         </div>
         <div className="col-lg-5">
           <div className="row r1"></div>
-          <div className="row" style={{color:"Red",fontFamily:"TimesNewRoman",fontSize:"20px"}}>
+          <div className="row" style={{color:"darkBlue",fontFamily:"TimesNewRoman",fontSize:"16px"}}>
             <div className="col-lg-12">
+            <Card>
+  <Card.Header className="text-center"  style={{fontFamily:"TimesNewRoman",color:"darkblue",fontSize:"20px"}}><strong>Create Room</strong></Card.Header>
+ 
+  <Card.Body>
         <Form className="createRoomForm"onSubmit={this.handleSubmit}>
           <Form.Group>
             <Form.Label><strong>Enter Room Name</strong></Form.Label>
@@ -87,11 +91,14 @@ class CreateRoomDiv extends Component {
             <Form.Label><strong>Enter Organization ID</strong></Form.Label>
             <Form.Control type="input" name="orgID" onChange={this.handleInputChange} />
           </Form.Group>
-          <Button variant="danger" type="submit" style={{fontFamily:"TimesNewRoman"}}><strong>
+          <Button type="submit" style={{backgroundColor:"darkBlue",fontFamily:"TimesNewRoman",fontSize:"16px"}}><strong>
             Create Room!
             </strong>
   </Button>
-        </Form>
+          </Form>
+          </Card.Body>
+         
+  </Card>
         </div>
         </div>
         </div>

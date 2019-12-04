@@ -1,5 +1,5 @@
 import React , { Component } from "react";
-import { Form, Button, FormGroup,Col } from 'react-bootstrap';
+import { Form, Button, FormGroup,Col,Card } from 'react-bootstrap';
 import "./style.css";
 
 class CompanyInfoForm extends Component {
@@ -56,6 +56,10 @@ class CompanyInfoForm extends Component {
 
   render() {
     return (
+      <Card>
+  <Card.Header className="text-center"  style={{fontFamily:"TimesNewRoman",color:"darkblue",fontSize:"20px"}}><strong>Organization Information</strong></Card.Header>
+ 
+  <Card.Body>
       <Form className ="companyForm"onSubmit={this.handleSubmit}>
           <Form.Row>
             <Col> <Form.Group>
@@ -92,11 +96,14 @@ class CompanyInfoForm extends Component {
           <Form.Label><strong>Organization Contact  Email</strong></Form.Label>
           <Form.Control type="email" name="Email" onChange={this.handleInputChange}/>
         </Form.Group>
-        <Button variant="danger" type="submit" style={{fontFamily:"TimesNewRoman"}}><strong>
-          Update Info
+        <Button  type="submit" style={{fontFamily:"TimesNewRoman",backgroundColor:"darkblue"}}><strong>
+          Add Information
           </strong>
-  </Button>
-      </Form>
+      </Button>
+        </Form>
+        </Card.Body>
+       
+  </Card>
     )
   }
 }

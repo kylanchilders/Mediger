@@ -100,18 +100,12 @@ class FrontDeskForm extends Component {
       <Form.Control type="input" name="Phone_Number" onChange={this.handleInputChange} /></Form.Group>
       <Form.Group> <Form.Label><strong>Organization ID</strong></Form.Label>
       <Form.Control type="input" name="orgID" onChange={this.handleInputChange} /></Form.Group>
-
-    
-    
-
-  </Form>
-  </Card.Body>
-  <Card.Footer className="text-center">
-    <Button type="submit" style={{fontFamily:"TimesNewRoman",backgroundColor:"darkblue"}}><strong>
+      <Button type="submit" style={{fontFamily:"TimesNewRoman",backgroundColor:"darkblue"}}><strong>
       Add Patient
       </strong>
       </Button>
-  </Card.Footer>
+      </Form>
+  </Card.Body>
   </Card>
      
     )

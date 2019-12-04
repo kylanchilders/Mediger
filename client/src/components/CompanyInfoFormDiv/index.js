@@ -37,7 +37,7 @@ const CompanyInfoFormDiv = () => {
             <div className="row  cfr1">
 
             </div>
-            <div className="row" style={{color:"Red",fontFamily:"TimesNewRoman",fontSize:"20px"}}>
+            <div className="row" style={{color:"darkblue",fontFamily:"TimesNewRoman",fontSize:"15px"}}>
             <div className ="col-lg-12">
             <CompanyInfoForm />
             </div>
