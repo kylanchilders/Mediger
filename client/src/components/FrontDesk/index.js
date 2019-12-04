@@ -36,13 +36,13 @@ const FrontDeskDiv = () => {
 
             </div>
             <AvailableRoom />
+            <br></br>
             
          <div>
              <div className="row" style={{position:"relative",left:"15%"}}>
                  <div className="col-lg-2"></div>
                  <div className="col-lg-6">
                      <FrontDeskForm/>
-                 
                  </div>
              </div>
         

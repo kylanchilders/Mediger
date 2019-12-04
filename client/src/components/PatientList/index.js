@@ -78,7 +78,7 @@ class PatientDiv extends Component {
 
                 </div>
                 <Card className="card1">
-                <Card.Header className="text-center"  style={{fontFamily:"TimesNewRoman",color:"darkblue",fontSize:"20px"}}><strong>Patient List</strong></Card.Header>
+                <Card.Header  style={{fontFamily:"TimesNewRoman",color:"darkblue",fontSize:"20px"}}><strong>Patient List</strong></Card.Header>
                 <Card.Body className="text-left">
                 <Table striped bordered hover>
                     <thead>
@@ -101,7 +101,7 @@ class PatientDiv extends Component {
                        <tr key={patients.id}>
                        {/* <ListItem key={patients.id}> */}
                            <td style={{width:"5rem"}}>
-                           <Link to={"/Notes/" + patients.id}>
+                           <Link to={"/Notes/" + patients.id} style={{color:"black",textDecoration:"none"}}>
                                Notes
                                </Link>
                               
