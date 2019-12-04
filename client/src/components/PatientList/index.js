@@ -87,7 +87,8 @@ class PatientDiv extends Component {
                     <thead>
                         <tr>
                             <th style={{width:"20px"}}>Notes</th>
-                            <th >First Name</th>
+                            <th>Room Number</th>
+                            <th>First Name</th>
                             <th>Last Name</th>
                             <th>DateOfBirth</th>
                             <th>Address</th>
@@ -109,6 +110,7 @@ class PatientDiv extends Component {
                                </Link>
                               
                                </td>
+                               <td style={{width:"3rem"}}>{patients.roomID}</td>
                                <td style={{width:"8rem"}}>{patients.First_Name}</td>
                                <td style={{width:"8rem"}}>{patients.Last_Name}</td>
                                <td style={{width:"5rem"}}>{patients.Date_Of_Birth}</td>
