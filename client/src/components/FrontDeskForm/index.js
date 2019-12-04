@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Button, FormGroup, Col } from 'react-bootstrap';
+import { Form, Button, FormGroup, Col,Card } from 'react-bootstrap';
 import "./style.css";
 
 
@@ -65,49 +65,55 @@ class FrontDeskForm extends Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit} style={{color:"Red",fontFamily:"TimesNewRoman",fontSize:"20px"}}>
+      <Card>
+  <Card.Header className="text-center"  style={{fontFamily:"TimesNewRoman",color:"darkblue",fontSize:"20px"}}><strong>Add Patient</strong></Card.Header>
+ 
+  <Card.Body>
+  <Form onSubmit={this.handleSubmit} style={{color:"darkblue",fontFamily:"TimesNewRoman",fontSize:"14px"}}>
       
-          <Form.Row>
-           
-            <Col> <Form.Group><Form.Label ><strong>First Name</strong></Form.Label>
-              <Form.Control type="input" name="First_Name" onChange={this.handleInputChange} /></Form.Group></Col>
-            <Col> <Form.Group><Form.Label ><strong>Last Name</strong></Form.Label>
-              <Form.Control type="input" name="Last_Name" onChange={this.handleInputChange} /></Form.Group></Col>
-          </Form.Row>
-          <Form.Row>
-            
-            <Col><Form.Group><Form.Label><strong>Date Of Birth</strong></Form.Label>
-          <Form.Control type="input" name="Date_Of_Birth" onChange={this.handleInputChange} /></Form.Group></Col>
-            <Col><Form.Group><Form.Label><strong>Address</strong></Form.Label>
-          <Form.Control type="input" name="Address" onChange={this.handleInputChange} /></Form.Group></Col>
-          </Form.Row>
-          <Form.Row>
-       
-          <Col> <Form.Group><Form.Label><strong>City</strong></Form.Label>
-          <Form.Control type="input" name="City" onChange={this.handleInputChange} /></Form.Group></Col>
-          <Col> <Form.Group><Form.Label><strong>State</strong></Form.Label>
-          <Form.Control type="input" name="State" onChange={this.handleInputChange} /></Form.Group></Col>
-          </Form.Row>
-<Form.Row>
-  
-    <Col><Form.Group><Form.Label><strong>Zip Code</strong></Form.Label>
-          <Form.Control type="input" name="Zip_Code" onChange={this.handleInputChange} /></Form.Group></Col>
-    <Col> <Form.Group><Form.Label><strong>Email Address</strong></Form.Label>
-          <Form.Control type="email" name="Email" onChange={this.handleInputChange} /></Form.Group></Col>
-</Form.Row>
-<Form.Row>
-
-  <Col><Form.Group><Form.Label><strong>Phone Number</strong></Form.Label>
-          <Form.Control type="input" name="Phone_Number" onChange={this.handleInputChange} /></Form.Group></Col>
-          <Col><Form.Group> <Form.Label><strong>Organization ID</strong></Form.Label>
-          <Form.Control type="input" name="orgID" onChange={this.handleInputChange} /></Form.Group></Col>
-</Form.Row>
+        <Form.Group><Form.Label ><strong>First Name</strong></Form.Label>
+          <Form.Control type="input" name="First_Name" onChange={this.handleInputChange} /></Form.Group>
+         <Form.Group><Form.Label ><strong>Last Name</strong></Form.Label>
+          <Form.Control type="input" name="Last_Name" onChange={this.handleInputChange} /></Form.Group>
+      
         
-        <Button variant="danger" type="submit" style={{fontFamily:"TimesNewRoman"}}><strong>
-          Update Info
-          </strong>
-    </Button>
-      </Form>
+     <Form.Group><Form.Label><strong>Date Of Birth</strong></Form.Label>
+      <Form.Control type="input" name="Date_Of_Birth" onChange={this.handleInputChange} /></Form.Group>
+        <Form.Group><Form.Label><strong>Address</strong></Form.Label>
+      <Form.Control type="input" name="Address" onChange={this.handleInputChange} /></Form.Group>
+    
+      
+   
+      <Form.Group><Form.Label><strong>City</strong></Form.Label>
+      <Form.Control type="input" name="City" onChange={this.handleInputChange} /></Form.Group>
+      <Form.Group><Form.Label><strong>State</strong></Form.Label>
+      <Form.Control type="input" name="State" onChange={this.handleInputChange} /></Form.Group>
+    
+
+<Form.Group><Form.Label><strong>Zip Code</strong></Form.Label>
+      <Form.Control type="input" name="Zip_Code" onChange={this.handleInputChange} /></Form.Group>
+ <Form.Group><Form.Label><strong>Email Address</strong></Form.Label>
+      <Form.Control type="email" name="Email" onChange={this.handleInputChange} /></Form.Group>
+
+
+<Form.Group><Form.Label><strong>Phone Number</strong></Form.Label>
+      <Form.Control type="input" name="Phone_Number" onChange={this.handleInputChange} /></Form.Group>
+      <Form.Group> <Form.Label><strong>Organization ID</strong></Form.Label>
+      <Form.Control type="input" name="orgID" onChange={this.handleInputChange} /></Form.Group>
+
+    
+    
+
+  </Form>
+  </Card.Body>
+  <Card.Footer className="text-center">
+    <Button type="submit" style={{fontFamily:"TimesNewRoman",backgroundColor:"darkblue"}}><strong>
+      Add Patient
+      </strong>
+      </Button>
+  </Card.Footer>
+  </Card>
+     
     )
   }
 }
