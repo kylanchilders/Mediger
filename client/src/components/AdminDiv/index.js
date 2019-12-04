@@ -41,7 +41,7 @@ const ProfileDiv = () => {
                             <div className="row">
                                 <div className="col-lg-1"></div>
                                 <div className="col-lg-6">
-                                <h6 className="glad" style={{ fontFamily: "TimesNewRoman", color:"white",position:"relative",left:"35%" }}><strong>WE'RE GLAD YOU ARE HERE</strong></h6>
+                                <h6 className="glad" style={{ fontFamily: "TimesNewRoman", color:"Red",position:"relative",left:"35%" }}><strong>WE'RE GLAD YOU ARE HERE</strong></h6>
                                 </div>  
                             </div>
                         </div>
