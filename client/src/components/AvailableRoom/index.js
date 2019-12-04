@@ -12,6 +12,7 @@ class AvailableRoom extends Component {
             patients: [],
             rooms: [],
             id: '',
+            CheckedIn: '',
             First_Name: '',
             Last_Name: '',
             roomID: '',
@@ -57,23 +58,34 @@ class AvailableRoom extends Component {
         });
     };
 
-    checkIn = id => {
-        console.log(id)
+    checkIn = (id, patid, CheckedIn) => {
+        console.log(CheckedIn)
+        console.log(this.state)
+
+
         fetch("http://localhost:3010/api/room/", {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                First_Name: this.state.First_Name,
-                Last_Name: this.state.Last_Name,
-                patientID: this.state.id,
                 id: id,
                 Available: 0
             })
 
         })
-            .then(res => this.componentDidMount())
-            .catch(err => console.log(err));
-    }
+
+        fetch("http://localhost:3010/api/patient/", {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                roomID: id,
+                id: patid,
+                CheckedIn: 1
+            })
+
+        }).then(res => console.log(res), this.componentDidMount())
+        .catch(err => console.log(err));
+    
+        }
 
     checkOut = (id, patid) => {
         console.log(id)
@@ -92,14 +104,22 @@ class AvailableRoom extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 id: patid,
-                CheckedIn: 1
+                roomID: '',
+                CheckedIn: 0
             })
 
-        }).then(res => console.log(res), this.componentDidMount())
+        }).then(res => console.log(res), this.componentDidMount(), this.componentDidMount())
         .catch(err => console.log(err));
     
         }
     
+        handleSelect = id => {
+            // what am I suppose to write in there to get the value?
+            console.log(id)
+            this.setState({ chosenRoomID: id })
+            console.log(this.state)
+        }
+
     render() {
         return (
             <Table className="patientTable" striped bordered hover>
@@ -124,13 +144,13 @@ class AvailableRoom extends Component {
                                  <Col size="lg-2">
                                     <Dropdown className="dropDown" style={{ display: "inline" }}>
                                         <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                            Choose a Room
+                                        <span id="selected">Choose a Room </span>
                                     </Dropdown.Toggle>
 
-                                        <Dropdown.Menu>
+                                        <Dropdown.Menu >
                                         {this.state.rooms.length ? (
                                         this.state.rooms.map(rooms => (
-                                            <Dropdown.Item key={rooms.id} >{rooms.id}</Dropdown.Item>
+                                            <Dropdown.Item onSelect={() => {this.handleSelect(rooms.id, patients.CheckedIn)}} key={rooms.id} >{rooms.id} </Dropdown.Item>
                                             ))
                                             ) : (
                                                     <h3>No Rooms to Assign</h3>
@@ -138,7 +158,7 @@ class AvailableRoom extends Component {
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 </Col>                        
-                                <td><Button onClick={() => { this.checkIn(this.state.chosenRoomID, patients.id) }}>Check-In</Button></td>
+                                <td><Button onClick={() => { this.checkIn(this.state.chosenRoomID, patients.id, patients.CheckedIn) }}>Check-In</Button></td>
                                 <td><Button onClick={() => { this.checkOut(patients.roomID, patients.id) }}>Check-Out</Button></td>
                             </tr>
                         ))
