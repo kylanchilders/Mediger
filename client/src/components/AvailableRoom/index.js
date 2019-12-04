@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Nav, NavItem, Navbar, NavDropdown, DropdownItem, Button, Dropdown, Form, FormGroup } from 'react-bootstrap';
+import { Nav, NavItem, Navbar, NavDropdown, DropdownItem, Button, Dropdown, Form, FormGroup, Card } from 'react-bootstrap';
 import { Col, Row, Container } from "../Grid";
 import Table from 'react-bootstrap/Table'
 import "./style.css";
@@ -120,7 +120,11 @@ class AvailableRoom extends Component {
 
     render() {
         return (
-            <Table className="patientTable" striped bordered hover>
+            <Card className="arCard">
+                 <Card.Header  style={{fontFamily:"TimesNewRoman",color:"darkblue",fontSize:"20px"}}><strong>All Patients</strong></Card.Header>
+                 <Card.Body className="text-left">
+
+                 <Table  striped bordered hover>
                 <thead>
                     <tr className="d-flex">
                         <th className="col-1">First Name</th>
@@ -169,6 +173,9 @@ class AvailableRoom extends Component {
                 </tbody>
 
             </Table>
+                 </Card.Body>
+            </Card>
+           
         )
     }
 }
