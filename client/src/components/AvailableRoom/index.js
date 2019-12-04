@@ -115,9 +115,7 @@ class AvailableRoom extends Component {
     
         handleSelect = id => {
             // what am I suppose to write in there to get the value?
-            console.log(id)
             this.setState({ chosenRoomID: id })
-            console.log(this.state)
         }
 
     render() {
