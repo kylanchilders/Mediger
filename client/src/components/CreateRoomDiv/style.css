@@ -2,15 +2,18 @@
 .sideBarMenuContainer {
     position: fixed;
     border: 1px outset white;
-   height: 600px;
    display:inline
    
 }
-
+.r1
+{
+  height:10rem;
+}
 .restOfContainer{
     position:relative; 
     left:10%
 }
+
 .mainDiv
 {
     background-image:url("../../images/carouselImage3.jpeg");
@@ -36,3 +39,26 @@
 background-color: whitesmoke;
 border-radius: 25px;
 }
+.form-control {
+    width: 50% !important;
+  }
+ .createRoomForm{
+     position: relative !important;
+     left:10% !important;
+     margin-top: 5%;
+     margin-bottom: 5%;
+ }
+ .fl1{
+   position: relative;
+   left:-38%;
+ }
+ .fl2{
+    position: relative;
+    left:-36%;
+  }
+  .b1
+  {
+    position: relative;
+    left:-40%;
+  }
+  

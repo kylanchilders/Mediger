@@ -141,8 +141,9 @@ class AvailableRoom extends Component {
                                 <td className="col-1">{patients.First_Name}</td>
                                 <td className="col-1">{patients.Last_Name}</td>
                                 <td className="col-2">{patients.roomID}</td>
+                                <td className="col-2" style={{overflowY:"scroll"}}>
                                  <Col size="lg-2">
-                                    <Dropdown className="dropDown" style={{ display: "inline" }}>
+                                    <Dropdown className="dropDown">
                                         <Dropdown.Toggle variant="success" id="dropdown-basic">
                                         <span id="selected">Choose a Room </span>
                                     </Dropdown.Toggle>
@@ -157,7 +158,9 @@ class AvailableRoom extends Component {
                                                 )}
                                         </Dropdown.Menu>
                                     </Dropdown>
-                                </Col>                        
+                              
+                                </Col>  
+                                </td>                      
                                 <td><Button onClick={() => { this.checkIn(this.state.chosenRoomID, patients.id, patients.CheckedIn) }}>Check-In</Button></td>
                                 <td><Button onClick={() => { this.checkOut(patients.roomID, patients.id) }}>Check-Out</Button></td>
                             </tr>
