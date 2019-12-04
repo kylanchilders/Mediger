@@ -51,8 +51,12 @@ td{
   overflow: hidden;
   text-align: center;
   font-size: 15px;
-  background-color:lightblue;
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
+}
+.card1
+{
+    position: relative;
+    left:15%;
 }
 

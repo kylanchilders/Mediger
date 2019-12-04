@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 import Table from 'react-bootstrap/Table'
-import { Nav, NavItem, Navbar, NavDropdown, DropdownItem } from 'react-bootstrap';
+import { Nav, NavItem, Navbar, NavDropdown, DropdownItem, Card } from 'react-bootstrap';
 
 import { NavLink, Link } from 'react-router-dom';
 import DeleteBtn from "../DeleteBtn";
@@ -77,7 +77,10 @@ class PatientDiv extends Component {
                     </Navbar>
 
                 </div>
-                <Table className="patientTable" striped bordered hover>
+                <Card className="card1">
+                <Card.Header className="text-center"  style={{fontFamily:"TimesNewRoman",color:"darkblue",fontSize:"20px"}}><strong>Patient List</strong></Card.Header>
+                <Card.Body className="text-left">
+                <Table striped bordered hover>
                     <thead>
                         <tr>
                             <th style={{width:"20px"}}>Notes</th>
@@ -125,6 +128,9 @@ class PatientDiv extends Component {
                   </tbody>   
                    
                 </Table>
+                </Card.Body>
+                </Card>
+                
                 {/* {this.state.patients.length ? (
                     <List>
                         {this.state.patients.map(patients => (
