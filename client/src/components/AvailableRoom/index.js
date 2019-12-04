@@ -17,10 +17,11 @@ class AvailableRoom extends Component {
             roomID: '',
             Name: '',
             Available: '',
-            patientID: ''
+            patientID: '',
+            chosenRoomID: ''
         };
 
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.checkIn = this.checkIn.bind(this);
         this.checkOut = this.checkOut.bind(this);
     }
 
@@ -56,7 +57,7 @@ class AvailableRoom extends Component {
         });
     };
 
-    handleSubmit = id => {
+    checkIn = id => {
         console.log(id)
         fetch("http://localhost:3010/api/room/", {
             method: 'PUT',
@@ -74,7 +75,7 @@ class AvailableRoom extends Component {
             .catch(err => console.log(err));
     }
 
-    checkOut = id => {
+    checkOut = (id, patid) => {
         console.log(id)
         fetch("http://localhost:3010/api/room/", {
             method: 'PUT',
@@ -85,9 +86,19 @@ class AvailableRoom extends Component {
             })
 
         })
-            .then(res => console.log(res), this.componentDidMount())
-            .catch(err => console.log(err));
-    }
+        console.log(patid)
+        fetch("http://localhost:3010/api/patient/", {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                id: patid,
+                CheckedIn: 1
+            })
+
+        }).then(res => console.log(res), this.componentDidMount())
+        .catch(err => console.log(err));
+    
+        }
     
     render() {
         return (
@@ -113,12 +124,12 @@ class AvailableRoom extends Component {
                                  <Col size="lg-2">
                                     <Dropdown className="dropDown" style={{ display: "inline" }}>
                                         <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                            Rooms Available
+                                            Choose a Room
                                     </Dropdown.Toggle>
 
                                         <Dropdown.Menu>
                                         {this.state.rooms.length ? (
-                        this.state.rooms.map(rooms => (
+                                        this.state.rooms.map(rooms => (
                                             <Dropdown.Item key={rooms.id} >{rooms.id}</Dropdown.Item>
                                             ))
                                             ) : (
@@ -127,8 +138,8 @@ class AvailableRoom extends Component {
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 </Col>                        
-                                <td><Button onClick={() => { this.handleSubmit(patients.roomID) }}>Check-In</Button></td>
-                                <td><Button onClick={() => { this.checkOut(patients.roomID) }}>Check-Out</Button></td>
+                                <td><Button onClick={() => { this.checkIn(this.state.chosenRoomID, patients.id) }}>Check-In</Button></td>
+                                <td><Button onClick={() => { this.checkOut(patients.roomID, patients.id) }}>Check-Out</Button></td>
                             </tr>
                         ))
                     ) : (

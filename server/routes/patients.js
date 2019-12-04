@@ -58,10 +58,10 @@ router.put('/:id', (req, res) => {
 		.catch((err) => res.status(400).json({ success: false, errors: { globals: "Oops, something wrong happened.." } }));
 });
 // Update Patient to a Room and Update room availability 
-router.put('/room/:id', (req, res) => {
-	let { id, roomID } = req.body;
+router.put('/', (req, res) => {
+	let { id , CheckedIn, roomID} = req.body;
 	models.patient
-		.update({ roomID }, { where: { id } })
+		.update({ CheckedIn, roomID }, { where: { id } })
 		.then(() => res.json({ success: true }))
 		.catch((err) => res.status(400).json({ success: false, errors: { globals: "Oops, something wrong happened.." } }));
 });
