@@ -60,6 +60,7 @@ router.put('/:id', (req, res) => {
 // Update Patient to a Room and Update room availability 
 router.put('/', (req, res) => {
 	let { id , CheckedIn, roomID} = req.body;
+	console.log(req.body)
 	models.patient
 		.update({ CheckedIn, roomID }, { where: { id } })
 		.then(() => res.json({ success: true }))
