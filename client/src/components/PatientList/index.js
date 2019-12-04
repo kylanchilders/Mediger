@@ -48,6 +48,12 @@ class PatientDiv extends Component {
             headers: { 'Content-Type': 'application/json' },
 
         })
+
+        fetch("http://localhost:3010/api/notes/" + id, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+
+        })
             .then(res => this.componentDidMount())
             .catch(err => console.log(err));
     };
