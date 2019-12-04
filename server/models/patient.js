@@ -46,7 +46,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER(11)
     },
     roomID: {
-      type: DataTypes.INTEGER(11)
+      type: DataTypes.CHAR(11)
     }
   });
   return Patient;
