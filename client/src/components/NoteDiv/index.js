@@ -97,7 +97,7 @@ class NoteDiv extends Component {
                 <Row>
                     <Col size="md-10 md-offset-1">
                         <article>
-                            <h1>Patient Notes</h1>
+                            <h1 style={{color:"darkblue"}}>Patient Notes</h1>
 
                             <br></br>
                             {this.state.notes.map((notes, id) => (
