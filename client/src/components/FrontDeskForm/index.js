@@ -66,40 +66,61 @@ class FrontDeskForm extends Component {
   render() {
     return (
       <Card>
-  <Card.Header className="text-center"  style={{fontFamily:"TimesNewRoman",color:"darkblue",fontSize:"20px"}}><strong>Add Patient</strong></Card.Header>
+  <Card.Header  style={{fontFamily:"TimesNewRoman",color:"darkblue",fontSize:"20px"}}><strong>Add Patient</strong></Card.Header>
  
   <Card.Body>
   <Form onSubmit={this.handleSubmit} style={{color:"darkblue",fontFamily:"TimesNewRoman",fontSize:"14px"}}>
-      
+      <div className="row">
+        <div className="col-lg-4">
         <Form.Group><Form.Label ><strong>First Name</strong></Form.Label>
           <Form.Control type="input" name="First_Name" onChange={this.handleInputChange} /></Form.Group>
+          </div>
+          <div className="col-lg-4">
          <Form.Group><Form.Label ><strong>Last Name</strong></Form.Label>
           <Form.Control type="input" name="Last_Name" onChange={this.handleInputChange} /></Form.Group>
-      
-        
-     <Form.Group><Form.Label><strong>Date Of Birth</strong></Form.Label>
+          </div>
+          <div className="col-lg-4">
+          <Form.Group><Form.Label><strong>Date Of Birth</strong></Form.Label>
       <Form.Control type="input" name="Date_Of_Birth" onChange={this.handleInputChange} /></Form.Group>
-        <Form.Group><Form.Label><strong>Address</strong></Form.Label>
+          </div>
+          </div>
+          <div className="row">
+          <div className="col-lg-4">
+          <Form.Group><Form.Label><strong>Address</strong></Form.Label>
       <Form.Control type="input" name="Address" onChange={this.handleInputChange} /></Form.Group>
-    
-      
-   
-      <Form.Group><Form.Label><strong>City</strong></Form.Label>
+          </div>
+          <div className="col-lg-4">
+          <Form.Group><Form.Label><strong>City</strong></Form.Label>
       <Form.Control type="input" name="City" onChange={this.handleInputChange} /></Form.Group>
-      <Form.Group><Form.Label><strong>State</strong></Form.Label>
+          </div>
+          <div className="col-lg-4">
+          <Form.Group><Form.Label><strong>State</strong></Form.Label>
       <Form.Control type="input" name="State" onChange={this.handleInputChange} /></Form.Group>
-    
-
-<Form.Group><Form.Label><strong>Zip Code</strong></Form.Label>
+          </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-4">
+            <Form.Group><Form.Label><strong>Zip Code</strong></Form.Label>
       <Form.Control type="input" name="Zip_Code" onChange={this.handleInputChange} /></Form.Group>
- <Form.Group><Form.Label><strong>Email Address</strong></Form.Label>
+            </div>
+            <div className="col-lg-4">
+            <Form.Group><Form.Label><strong>Email Address</strong></Form.Label>
       <Form.Control type="email" name="Email" onChange={this.handleInputChange} /></Form.Group>
-
-
-<Form.Group><Form.Label><strong>Phone Number</strong></Form.Label>
+            </div>
+            <div className="col-lg-4">
+            <Form.Group><Form.Label><strong>Phone Number</strong></Form.Label>
       <Form.Control type="input" name="Phone_Number" onChange={this.handleInputChange} /></Form.Group>
-      <Form.Group> <Form.Label><strong>Organization ID</strong></Form.Label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-4">
+            <Form.Group> <Form.Label><strong>Organization ID</strong></Form.Label>
       <Form.Control type="input" name="orgID" onChange={this.handleInputChange} /></Form.Group>
+            </div>
+            <div className="col-lg-4"></div>
+            <div className="col-lg-4"></div>
+          </div>
+         
       <Button type="submit" style={{fontFamily:"TimesNewRoman",backgroundColor:"darkblue"}}><strong>
       Add Patient
       </strong>

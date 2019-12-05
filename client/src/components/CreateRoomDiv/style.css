@@ -61,4 +61,8 @@ border-radius: 25px;
     position: relative;
     left:-40%;
   }
+  .tableCard
+  {
+    width:100%;
+  }
   
