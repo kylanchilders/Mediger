@@ -160,13 +160,13 @@ class CreateRoomDiv extends Component {
                           <div className="col-lg-4">
                             <Form.Group>
                               <Form.Label><strong>Enter Room Name</strong></Form.Label>
-                              <Form.Control className="inputO" type="input" name="Name" onChange={this.handleInputChange} />
+                              <Form.Control className="inputO" type="input" name="Name" onChange={this.handleInputChange} required/>
                             </Form.Group>
                           </div>
                           <div className="col-lg-4">
                             <Form.Group>
                               <Form.Label><strong>Enter Organization ID</strong></Form.Label>
-                              <Form.Control className="inputO" type="input" name="orgID" onChange={this.handleInputChange} />
+                              <Form.Control className="inputO" type="input" name="orgID" onChange={this.handleInputChange} required/>
                             </Form.Group>
                           </div>
                           <div className="col-lg-5"></div>
