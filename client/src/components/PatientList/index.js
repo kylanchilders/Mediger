@@ -133,22 +133,6 @@ class PatientDiv extends Component {
                   </tbody>   
                    
                 </Table>
-                {/* {this.state.patients.length ? (
-                    <List>
-                        {this.state.patients.map(patients => (
-                            <ListItem key={patients.id}>
-                                <Link to={"/Notes/" + patients.id}>
-                                    <strong>
-                                        {patients.First_Name} {patients.Last_Name} {patients.Address}  {patients.City}  {patients.State} {patients.Zip_Code} {patients.Email} {patients.orgID} {patients.RoomID}
-                                    </strong>
-                                </Link>
-                                <DeleteBtn onClick={() => { if (window.confirm('Are you sure you wish to delete this patient?')) this.deletePatient(patients.id)}} />
-                            </ListItem>
-                        ))}
-                    </List>
-                ) : (
-                        // <h3>No Results to Display</h3>
-                    )} */}
             </div>
 
         )

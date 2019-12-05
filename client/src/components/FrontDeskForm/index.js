@@ -20,7 +20,7 @@ class FrontDeskForm extends Component {
       Phone_Number: '',
       orgID: ''
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.addPatient = this.addPatient.bind(this);
   }
 
   handleInputChange = event => {
@@ -30,7 +30,7 @@ class FrontDeskForm extends Component {
     });
   };
 
-  handleSubmit(event) {
+  addPatient(event) {
     event.preventDefault();
 
     const data = new FormData(event.target);
@@ -65,11 +65,11 @@ class FrontDeskForm extends Component {
 
   render() {
     return (
-      <Card>
+      <Card onSubmit={() => this.addPatient()}>
   <Card.Header className="text-center"  style={{fontFamily:"TimesNewRoman",color:"darkblue",fontSize:"20px"}}><strong>Add Patient</strong></Card.Header>
  
   <Card.Body>
-  <Form onSubmit={this.handleSubmit} style={{color:"darkblue",fontFamily:"TimesNewRoman",fontSize:"14px"}}>
+  <Form   style={{color:"darkblue",fontFamily:"TimesNewRoman",fontSize:"14px"}}>
       
         <Form.Group><Form.Label ><strong>First Name</strong></Form.Label>
           <Form.Control type="input" name="First_Name" onChange={this.handleInputChange} /></Form.Group>
@@ -106,8 +106,8 @@ class FrontDeskForm extends Component {
 
   </Form>
   </Card.Body>
-  <Card.Footer className="text-center">
-    <Button type="submit" style={{fontFamily:"TimesNewRoman",backgroundColor:"darkblue"}}><strong>
+  <Card.Footer onSubmit={() => this.addPatient()} className="text-center">
+    <Button  type="submit" style={{fontFamily:"TimesNewRoman",backgroundColor:"darkblue"}}><strong>
       Add Patient
       </strong>
       </Button>
