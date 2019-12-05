@@ -42,17 +42,26 @@ class PatientDiv extends Component {
         });
 
     }
-    deletePatient = id => {
+    deletePatient = (id, roomID) => {
         fetch("http://localhost:3010/api/patient/" + id, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
 
         })
 
-        fetch("http://localhost:3010/api/notes/" + id, {
+        fetch("http://localhost:3010/api/notes/patient/" + id, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
 
+        })
+
+        fetch("http://localhost:3010/api/room", {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                id: roomID,
+                Available: 1
+            })
         })
             .then(res => this.componentDidMount())
             .catch(err => console.log(err));
@@ -128,7 +137,7 @@ class PatientDiv extends Component {
                                {/* <strong>
                                    {patients.First_Name} {patients.Last_Name} {patients.Address}  {patients.City}  {patients.State} {patients.Zip_Code} {patients.Email} {patients.orgID} {patients.RoomID}
                                </strong> */}
-                               <td > <strong><DeleteBtn style={{float:"left"}} onClick={() => { if (window.confirm('Are you sure you wish to delete this patient?')) this.deletePatient(patients.id)}} /></strong></td>
+                               <td > <strong><DeleteBtn style={{float:"left"}} onClick={() => { if (window.confirm('Are you sure you wish to delete this patient?')) this.deletePatient(patients.id, patients.roomID)}} /></strong></td>
                        </tr>
                      
                    ))

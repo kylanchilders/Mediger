@@ -50,6 +50,7 @@ class NoteDiv extends Component {
     };
 
     deleteNotes = id => {
+
         fetch("http://localhost:3010/api/notes/" + id, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
