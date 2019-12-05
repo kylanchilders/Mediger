@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Form, Button, FormGroup } from 'react-bootstrap';
+import { Form, Button, FormGroup ,Card} from 'react-bootstrap';
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import DeleteBtn from "../components/DeleteBtn";
@@ -113,12 +113,12 @@ handleSubmit(event) {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-            <h1>
+            <h1 style={{color:"darkblue"}}>
                                 {this.state.patient.map(patients => (
                                     <p key={patients}>{patients.First_Name} {patients.Last_Name}</p>
                                 ))}
                             </h1>
-                            <h4>Room Number: {this.state.patient.map(patients => (
+                            <h4 style={{color:"darkblue",fontFamily:"TimesNewRoman"}}>Room Number: {this.state.patient.map(patients => (
                                     <p key={patients}>{patients.roomID}</p>
                                 ))}</h4>
             </Jumbotron>
@@ -127,7 +127,7 @@ handleSubmit(event) {
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              <h1>Patient Notes</h1>
+              <h1 style={{color:"darkblue"}}>Patient Notes: </h1>
 
               <br></br>
               {this.state.notes.map((notes, id) => (
@@ -141,22 +141,27 @@ handleSubmit(event) {
 
           </Col>
         </Row>
- <Form onSubmit={this.handleSubmit}>
+        <Card>
+                    <Card.Header className="text-center" style={{ fontFamily: "TimesNewRoman", color: "darkblue", fontSize: "20px" }}><strong>Add Note</strong></Card.Header>
+                    <Card.Body className="text-left">
+ <Form onSubmit={this.handleSubmit} style={{fontFamily:"TimesNewRoman",color:"darkBlue"}}>
           <Form.Group>
-            <Form.Label>Note</Form.Label>
+            <Form.Label><strong>Note</strong></Form.Label>
             <Form.Control type="input" name="Note" onChange={this.handleInputChange}/>
-            <Form.Label>Date Entered</Form.Label>
+            <Form.Label><strong>Date Entered</strong></Form.Label>
             <Form.Control type="input" name="Date" onChange={this.handleInputChange}/>
-            <Form.Label>Your ID</Form.Label>
+            <Form.Label><strong>Your ID</strong></Form.Label>
             <Form.Control type="input" name="userID" onChange={this.handleInputChange}/>
           </Form.Group>
-          <Button variant="primary" type="submit">
-            Add Note
+          <Button style={{fontFamily:"TimesNewRoman",backgroundColor:"darkblue"}} type="submit"><strong>
+            Add Note</strong>
     </Button>
         </Form>
+        </Card.Body>
+        </Card>
         <Row>
           <Col size="md-2">
-            <Link to="/PatientList">← Back to Patients</Link>
+            <Link to="/PatientList" style={{color:"darkblue",textDecoration:"none"}}>← Back to Patients</Link>
           </Col>
         </Row>
       </Container>

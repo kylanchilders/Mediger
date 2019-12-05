@@ -42,6 +42,9 @@ class NoteForm extends Component {
   
     render() {
       return (
+        <Card>
+                    <Card.Header className="text-center" style={{ fontFamily: "TimesNewRoman", color: "darkblue", fontSize: "20px" }}><strong>Add Note</strong></Card.Header>
+                    <Card.Body className="text-left">
         <Form onSubmit={this.handleSubmit}>
           <Form.Group>
             <Form.Label>Note</Form.Label>
@@ -51,10 +54,12 @@ class NoteForm extends Component {
             <Form.Label>Your ID</Form.Label>
             <Form.Control type="input" name="userID" onChange={this.handleInputChange}/>
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button type="submit" style={{ backgroundColor: "darkBlue", fontFamily: "TimesNewRoman", fontSize: "16px" }}>
             Add Note
     </Button>
         </Form>
+        </Card.Body>
+        </Card>
       )
     }
   }
