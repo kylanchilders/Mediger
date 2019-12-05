@@ -75,15 +75,15 @@ class FrontDeskForm extends Component {
         <div className="col-lg-2"></div>
         <div className="col-lg-2">
         <Form.Group><Form.Label ><strong>First Name</strong></Form.Label>
-          <Form.Control  className="input"type="input" name="First_Name" onChange={this.handleInputChange} /></Form.Group>
+          <Form.Control  className="input"type="input" name="First_Name" onChange={this.handleInputChange} required/></Form.Group>
           </div>
           <div className="col-lg-2">
          <Form.Group><Form.Label ><strong>Last Name</strong></Form.Label>
-          <Form.Control className="input" type="input" name="Last_Name" onChange={this.handleInputChange} /></Form.Group>
+          <Form.Control className="input" type="input" name="Last_Name" onChange={this.handleInputChange} required/></Form.Group>
           </div>
           <div className="col-lg-2">
           <Form.Group><Form.Label><strong>Date Of Birth</strong></Form.Label>
-      <Form.Control className="input" type="input" name="Date_Of_Birth" onChange={this.handleInputChange} /></Form.Group>
+      <Form.Control className="input" type="input" name="Date_Of_Birth" onChange={this.handleInputChange} required /></Form.Group>
           </div>
           <div className="col-lg-2"></div>
           </div>
@@ -92,15 +92,15 @@ class FrontDeskForm extends Component {
           <div className="col-lg-2"></div>
           <div className="col-lg-2">
           <Form.Group><Form.Label><strong>Address</strong></Form.Label>
-      <Form.Control className="input"type="input" name="Address" onChange={this.handleInputChange} /></Form.Group>
+      <Form.Control className="input"type="input" name="Address" onChange={this.handleInputChange} required/></Form.Group>
           </div>
           <div className="col-lg-2">
           <Form.Group><Form.Label><strong>City</strong></Form.Label>
-      <Form.Control  className="input"type="input" name="City" onChange={this.handleInputChange} /></Form.Group>
+      <Form.Control  className="input"type="input" name="City" onChange={this.handleInputChange} required/></Form.Group>
           </div>
           <div className="col-lg-2">
           <Form.Group><Form.Label><strong>State</strong></Form.Label>
-      <Form.Control className="input" type="input" name="State" onChange={this.handleInputChange} /></Form.Group>
+      <Form.Control className="input" type="input" name="State" onChange={this.handleInputChange} required/></Form.Group>
           </div>
           <div className="col-lg-2"></div>
           </div>
@@ -109,15 +109,15 @@ class FrontDeskForm extends Component {
           <div className="col-lg-2"></div>
             <div className="col-lg-2">
             <Form.Group><Form.Label><strong>Zip Code</strong></Form.Label>
-      <Form.Control className="input" type="input" name="Zip_Code" onChange={this.handleInputChange} /></Form.Group>
+      <Form.Control className="input" type="input" name="Zip_Code" onChange={this.handleInputChange} required pattern="^\d{5}$" /></Form.Group>
             </div>
             <div className="col-lg-2">
             <Form.Group><Form.Label><strong>Email Address</strong></Form.Label>
-      <Form.Control className="input" type="email" name="Email" onChange={this.handleInputChange} /></Form.Group>
+      <Form.Control className="input" type="email" name="Email" onChange={this.handleInputChange}  required/></Form.Group>
             </div>
             <div className="col-lg-2">
             <Form.Group><Form.Label><strong>Phone Number</strong></Form.Label>
-      <Form.Control className="input" type="input" name="Phone_Number" onChange={this.handleInputChange} /></Form.Group>
+      <Form.Control className="input"  type="input" name="Phone_Number" onChange={this.handleInputChange}  required pattern="^\d{10}$"/></Form.Group>
             </div>
             <div className="col-lg-2"></div>
           </div>
@@ -127,7 +127,7 @@ class FrontDeskForm extends Component {
           <div className="col-lg-2"></div>
             <div className="col-lg-2">
                <Form.Group> <Form.Label><strong>Organization ID</strong></Form.Label>
-      <Form.Control className="input" type="input" name="orgID" onChange={this.handleInputChange} /></Form.Group>
+      <Form.Control className="input" type="input" name="orgID" onChange={this.handleInputChange} required/></Form.Group>
             </div>
             <div className="col-lg-2"></div>
             <div className="col-lg-2"></div>

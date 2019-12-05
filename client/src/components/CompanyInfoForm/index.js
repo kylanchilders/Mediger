@@ -64,37 +64,37 @@ class CompanyInfoForm extends Component {
           <Form.Row>
             <Col> <Form.Group>
           <Form.Label><strong>Organization Name</strong></Form.Label>
-          <Form.Control type="input" name="Name" onChange={this.handleInputChange}/>
+          <Form.Control type="input" name="Name" onChange={this.handleInputChange} required/>
         </Form.Group></Col>
             <Col>
             <Form.Group>
           <Form.Label><strong>Contact </strong></Form.Label>
-          <Form.Control type="input" name="Phone_Number" onChange={this.handleInputChange}/>
+          <Form.Control type="input" name="Phone_Number" onChange={this.handleInputChange} required pattern="^\d{10}$"/>
         </Form.Group></Col>
           </Form.Row>
         <Form.Row>
           <Col><Form.Group>
           <Form.Label><strong>Address</strong></Form.Label>
-          <Form.Control type="input" name="Address" onChange={this.handleInputChange}/>
+          <Form.Control type="input" name="Address" onChange={this.handleInputChange} required/>
         </Form.Group></Col>
           <Col> <Form.Group>
           <Form.Label><strong>City</strong></Form.Label>
-          <Form.Control type="input" name="City" onChange={this.handleInputChange}/>
+          <Form.Control type="input" name="City" onChange={this.handleInputChange} required/>
         </Form.Group></Col>
           </Form.Row> 
         <Form.Row>
           <Col><Form.Group>
           <Form.Label><strong>State</strong></Form.Label>
-          <Form.Control type="input" name="State" onChange={this.handleInputChange}/>
+          <Form.Control type="input" name="State" onChange={this.handleInputChange} required/>
         </Form.Group></Col>
           <Col><Form.Group>
           <Form.Label><strong>Zip Code</strong></Form.Label>
-          <Form.Control type="input" name="Zip_Code" onChange={this.handleInputChange}/>
+          <Form.Control type="input" name="Zip_Code" onChange={this.handleInputChange} required pattern="^\d{5}$"/>
         </Form.Group></Col>
         </Form.Row>
         <Form.Group>
           <Form.Label><strong>Organization Contact  Email</strong></Form.Label>
-          <Form.Control type="email" name="Email" onChange={this.handleInputChange}/>
+          <Form.Control type="email" name="Email" onChange={this.handleInputChange} required/>
         </Form.Group>
         <Button  type="submit" style={{fontFamily:"TimesNewRoman",backgroundColor:"darkblue"}}><strong>
           Add Information
