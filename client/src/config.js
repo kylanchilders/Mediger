@@ -6,9 +6,9 @@ const configProd = {
 };
 // development specific config goes here
 const configDev = {
-  API_URI: "http://localhost:3010"
+  API_URI: "https://mediger.herokuapp.com"
 };
 
 // merged config
-const config = { ...configDev };
+const config = { ...configProd };
 export default config;
