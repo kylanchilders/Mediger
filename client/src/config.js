@@ -2,7 +2,7 @@
 const configGlob = {};
 // production specific config goes here
 const configProd = {
-  API_URI: "http://www.example.com/api/v2"
+  API_URI: "https://mediger.herokuapp.com"
 };
 // development specific config goes here
 const configDev = {
