@@ -4,12 +4,12 @@
 // =================================================
 var express = require("express");
 var session = require ("express-session");
-var db = require ("./server/models");
-var rooms = require ("./server/routes/rooms");
-var patients = require ("./server/routes/patients");
-var orgUsers = require ("./server/routes/orgUsers");
-var organizations = require ("./server/routes/organizations");
-var notes = require ("./server/routes/notes");
+var db = require ("./models");
+var rooms = require ("./routes/rooms");
+var patients = require ("./routes/patients");
+var orgUsers = require ("./routes/orgUsers");
+var organizations = require ("./routes/organizations");
+var notes = require ("./routes/notes");
 
 // Sets up the Express App
 // ================================================
@@ -38,8 +38,7 @@ app.use(function(req, res, next) {
    });
 
 
-// Static directory
-app.use(express.static("public"));
+
 
 // Routes // ========================================================
 app.use('/api/room/', rooms);
@@ -48,6 +47,13 @@ app.use('/api/orgUser/', orgUsers);
 app.use('/api/organization/', organizations);
 app.use('/api/notes/', notes);
 
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static("client/build"));
+  }
+  app.use(function(req, res) {
+	res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  });
 
 // Middleware for errors
 app.use((req, res) => {
