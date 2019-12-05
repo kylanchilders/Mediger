@@ -4,12 +4,12 @@
 // =================================================
 var express = require("express");
 var session = require ("express-session");
-var db = require ("./server/models");
-var rooms = require ("./server/routes/rooms");
-var patients = require ("./server/routes/patients");
-var orgUsers = require ("./server/routes/orgUsers");
-var organizations = require ("./server/routes/organizations");
-var notes = require ("./server/routes/notes");
+var db = require ("./models");
+var rooms = require ("./routes/rooms");
+var patients = require ("./routes/patients");
+var orgUsers = require ("./routes/orgUsers");
+var organizations = require ("./routes/organizations");
+var notes = require ("./routes/notes");
 
 // Sets up the Express App
 // ================================================
