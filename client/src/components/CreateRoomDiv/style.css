@@ -1,26 +1,23 @@
 
 .sideBarMenuContainer {
-    position: fixed;
-    border: 1px outset white;
-   display:inline
+  position: fixed;
+  border: 1px outset white;
+ height: 600px;
+ float:left;
    
 }
 .r1
 {
   height:6rem;
 }
-.restOfContainer{
-    position:relative; 
-    left:10%
-}
 
-.mainDiv
+.createRoomDiv
 {
     background-image:url("../../images/carouselImage3.jpeg");
 	background-repeat:no-repeat;
     background-size:cover;
     height: 600px;
-   
+   overflow-x: hidden;
     /* -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
   -o-filter: blur(5px);
@@ -39,30 +36,12 @@
 background-color: whitesmoke;
 border-radius: 25px;
 }
-.form-control {
-    width: 50% !important;
-  }
- .createRoomForm{
-     position: relative !important;
-     left:10% !important;
-     margin-top: 5%;
-     margin-bottom: 5%;
- }
- .fl1{
-   position: relative;
-   left:-38%;
- }
- .fl2{
-    position: relative;
-    left:-36%;
-  }
-  .b1
-  {
-    position: relative;
-    left:-40%;
-  }
   .tableCard
   {
     width:100%;
+  }
+  .inputO
+  {
+    width:100% !important ;
   }
   
