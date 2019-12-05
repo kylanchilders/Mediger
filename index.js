@@ -39,7 +39,7 @@ app.use(function(req, res, next) {
 
 
 // Static directory
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 // Routes // ========================================================
 app.use('/api/room/', rooms);
