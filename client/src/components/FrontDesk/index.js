@@ -22,7 +22,7 @@ const FrontDeskDiv = () => {
                                 Patient List
                         </NavLink>
                             <NavLink className="nl" to="/CreateRoom">
-                                Create Room
+                                Rooms
                         </NavLink>
                             <NavLink className="nl" to="/CompanyInfo">
                                 Company Info
@@ -36,12 +36,9 @@ const FrontDeskDiv = () => {
 
             </div>
             <AvailableRoom />
-            <br></br>
-            
          <div>
              <div className="row" style={{position:"relative",left:"15%"}}>
-                 <div className="col-lg-2"></div>
-                 <div className="col-lg-6">
+                 <div className="col-lg-12">
                      <FrontDeskForm/>
                  </div>
              </div>

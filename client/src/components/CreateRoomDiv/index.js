@@ -87,7 +87,7 @@ class CreateRoomDiv extends Component {
     return (
       <div className="mainDiv" >
          <div className="row">
-                <div className="col-lg-4">
+                <div className="col-lg-2">
         <div className="sideBarMenuContainer">
           <Navbar fluid="true" inverse="true" >
             <Navbar.Collapse>
@@ -96,7 +96,7 @@ class CreateRoomDiv extends Component {
                   Patient List
                         </NavLink>
                 <NavLink className="nl" to="/CreateRoom">
-                  Create Room
+                  Rooms
                         </NavLink>
                 <NavLink className="nl" to="/CompanyInfo">
                   Company Info
@@ -109,7 +109,12 @@ class CreateRoomDiv extends Component {
           </Navbar>
         </div>
         </div>
-        <Table className="patientTable" striped bordered hover>
+        <div className="col-lg-10">
+          <div className="row">
+        <Card className="tableCard">
+        <Card.Header className="text-center"  style={{fontFamily:"TimesNewRoman",color:"darkblue",fontSize:"20px"}}><strong>Room Details</strong></Card.Header>
+        <Card.Body>
+        <Table  striped bordered hover>
             <thead>
               <tr>
                 <th>Room Number</th>
@@ -138,15 +143,17 @@ class CreateRoomDiv extends Component {
                 )}
             </tbody>
           </Table>
-        <div className="col-lg-5">
-          <div className="row r1"></div>
-          <div className="row" style={{color:"darkBlue",fontFamily:"TimesNewRoman",fontSize:"16px"}}>
-            <div className="col-lg-12">
+          </Card.Body>
+          </Card>
+          </div>
+          <br></br>
+          <div className="row">
+            <div className="col-lg-3"></div>
+            <div className="col-lg-6">
             <Card>
   <Card.Header className="text-center"  style={{fontFamily:"TimesNewRoman",color:"darkblue",fontSize:"20px"}}><strong>Create Room</strong></Card.Header>
- 
   <Card.Body>
-        <Form className="createRoomForm"onSubmit={this.handleSubmit}>
+        <Form className="createRoomForm"onSubmit={this.handleSubmit} style={{fontFamily:"TimesNewRoman",color:"darkblue",fontSize:"15px"}}>
           <Form.Group>
             <Form.Label><strong>Enter Room Name</strong></Form.Label>
             <Form.Control type="input" name="Name" onChange={this.handleInputChange} />
@@ -163,9 +170,14 @@ class CreateRoomDiv extends Component {
           </Card.Body>
          
   </Card>
-        </div>
-        </div>
-        </div>
+            </div>
+            <div className="col-lg-3"></div>
+         
+          </div>
+          </div>
+          <div className="col-lg-2"></div>
+            
+  
         </div>
       </div>
 

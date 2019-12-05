@@ -70,7 +70,7 @@ class PatientDiv extends Component {
                                     Patient List
                         </NavLink>
                                 <NavLink className="nl" to="/CreateRoom">
-                                    Create Room
+                                    Rooms
                         </NavLink>
                                 <NavLink className="nl" to="/CompanyInfo">
                                     Company Info
