@@ -13,8 +13,9 @@ const FrontDeskDiv = () => {
     return (
 
         <div className="frontDeskDiv" >
-
-            <div className="sideBarMenuContainer">
+<div className="row">
+    <div className="col-lg-2">
+    <div className="sideBarMenuContainer">
                 <Navbar fluid="true" inverse="true" >
                     <Navbar.Collapse>
                         <Navbar.Text className="nt">
@@ -35,15 +36,23 @@ const FrontDeskDiv = () => {
                 </Navbar>
 
             </div>
-            <AvailableRoom />
-         <div>
-             <div className="row" style={{position:"relative",left:"15%"}}>
+    </div>
+    <div className="col-lg-10">
+    <AvailableRoom />
+    <div>
+        <br></br>
+             <div className="row">
                  <div className="col-lg-12">
                      <FrontDeskForm/>
                  </div>
              </div>
         
          </div>
+    </div>
+</div>
+           
+           
+        
                           
                       
             </div>

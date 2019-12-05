@@ -127,8 +127,8 @@ class AvailableRoom extends Component {
                  <Table  striped bordered hover>
                 <thead>
                     <tr className="d-flex">
-                        <th className="col-1">First Name</th>
-                        <th className="col-1">Last Name</th>
+                        <th className="col-2">First Name</th>
+                        <th className="col-2">Last Name</th>
                         <th className="col-2">Room Number</th>
                         <th className="col-2">Available Rooms</th>
                     </tr>
@@ -140,12 +140,15 @@ class AvailableRoom extends Component {
                             <tr className="d-flex" key={patients.id}>
                                 {/* <ListItem key={patients.id}> */}
 
-                                <td className="col-1">{patients.First_Name}</td>
-                                <td className="col-1">{patients.Last_Name}</td>
+                                <td className="col-2">{patients.First_Name}</td>
+                                <td className="col-2">{patients.Last_Name}</td>
                                 <td className="col-2">{patients.roomID}</td>
                                
                                  <Col size="lg-2">
-                                    <Dropdown className="dr">
+                                     <div className="row">
+                                       <div className="col-lg-12">
+                                         <div className="row" style={{height:"25%"}}></div>
+                                       <Dropdown className="dr">
                                         <Dropdown.Toggle variant="success" id="dropdown-basic">
                                         <span id="selected">Choose a Room </span>
                                     </Dropdown.Toggle>
@@ -160,7 +163,10 @@ class AvailableRoom extends Component {
                                                 )}
                                         </Dropdown.Menu>
                                     </Dropdown>
-                              
+                                           </div>  
+                                        
+                                     </div>
+                                   
                                 </Col>  
                                                    
                                 <td><Button onClick={() => { this.checkIn(this.state.chosenRoomID, patients.id, patients.CheckedIn) }}>Check-In</Button></td>
