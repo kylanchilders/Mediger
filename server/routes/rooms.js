@@ -3,27 +3,6 @@ var models = require("../models");
 
 const router = express.Router();
 
-/**
- * Get room by ID
- */
-router.get('/:id', (req, res) => {
-	let error = null;
-	let id = req.params.id || null;
-
-	if (!id) error = "Invalid request.";
-	else if (Validator.isEmpty(id)) error = "Invalid request.";
-	else if (!Validator.isInt(id)) error = "Value must be integer.";
-	else if (id <= 0) error = "Invalid value.";
-
-	if (error) res.status(400).json({ success: false, error: error, data: {} });
-
-	models.room.findById(req.params.id).then(data => {
-		if (data)
-			res.json({ success: true, room: data });
-		else
-			res.status(400).json({ success: false, error: "room not found.", room: {} });
-	})
-});
 
 /**
  * Insert new room
@@ -38,6 +17,15 @@ router.post('/createRoom', (req, res) => {
 		.catch((err) => res.status(400).json({ success: false, errors: { globals: err } }));
 });
 
+router.get('/room', (req, res) => {
+	models.sequelize.query(
+		'SELECT distinct `rooms`.id as id, `rooms`.name, `patients`.id as patientid, `patients`.First_Name,`patients`.Last_Name FROM `rooms` LEFT JOIN `patients` on rooms.id = patients.roomID',{type: models.Sequelize.QueryTypes.SELECT}
+		).then(patient => {
+			console.log(patient)
+			res.json(patient);
+	
+		});
+	})
 /**
  * Update room by ID
  */

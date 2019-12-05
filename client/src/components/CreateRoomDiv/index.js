@@ -3,20 +3,48 @@ import './style.css';
 import config from '../../config';
 // import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 import { Nav, NavItem, Navbar, NavDropdown, DropdownItem,Card } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
+import { NavLink, Link } from 'react-router-dom';
+import Table from 'react-bootstrap/Table'
+import DeleteBtn from "../DeleteBtn";
 
 
 class CreateRoomDiv extends Component {
-  constructor() {
-    super();
-    this.state = {
-      Name: '',
-      orgID: ''
-    };
+  constructor(props) {
+    super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.deleteRoom = this.deleteRoom.bind(this);
+  };
+
+  state = {
+    patientRooms: [],
+    id: '',
+    First_Name: '',
+    Last_Name: '',
+    orgID: '',
+    RoomID: '',
+    Name: '',
+    orgID: ''
   }
 
+
+  componentDidMount() {
+
+
+    fetch("http://localhost:3010/api/room/room", {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+
+
+    }).then((res) => {
+      res.json().then((data) => {
+        this.setState({ patientRooms: data })
+        console.log(this.state.patientRooms)
+      });
+    })
+    
+
+  }
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -44,8 +72,15 @@ class CreateRoomDiv extends Component {
 
       })
 
-    })
+    }).then (res => this.componentDidMount())
 
+  }
+  deleteRoom = id => {
+    fetch("http://localhost:3010/api/room/" + id, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+
+    }).then (res => this.componentDidMount())
   }
 
   render() {
@@ -74,6 +109,35 @@ class CreateRoomDiv extends Component {
           </Navbar>
         </div>
         </div>
+        <Table className="patientTable" striped bordered hover>
+            <thead>
+              <tr>
+                <th>Room Number</th>
+                <th>Room Name</th>
+                <th>Patient</th>
+                <th>Notes</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.patientRooms.length ? (
+                this.state.patientRooms.map(patientRooms => (
+                  <tr key={patientRooms.id}>
+                    <td style={{ width: "3rem" }}>{patientRooms.id}</td>
+                    <td style={{ width: "8rem" }}>{patientRooms.name}</td>
+                    <td style={{ width: "8rem" }}>{patientRooms.First_Name} {patientRooms.Last_Name}</td>
+                    <td style={{ width: "5rem" }}><Link to={"/Notes/" + patientRooms.patientid}>Notes</Link></td>
+
+                    <td > <strong><DeleteBtn style={{ float: "left" }} onClick={() => { if (window.confirm('Are you sure you wish to delete this room?')) this.deleteRoom(patientRooms.id) }} /></strong></td>
+                  </tr>
+
+                ))
+
+              ) : (
+                  <h3>No Results to Display</h3>
+                )}
+            </tbody>
+          </Table>
         <div className="col-lg-5">
           <div className="row r1"></div>
           <div className="row" style={{color:"darkBlue",fontFamily:"TimesNewRoman",fontSize:"16px"}}>
