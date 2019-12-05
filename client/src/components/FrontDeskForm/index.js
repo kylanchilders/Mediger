@@ -71,6 +71,7 @@ class FrontDeskForm extends Component {
   <Card.Body>
   <Form onSubmit={this.handleSubmit} style={{color:"darkblue",fontFamily:"TimesNewRoman",fontSize:"14px"}}>
       <div className="row">
+        <div className="col-lg-1"></div>
         <div className="col-lg-2"></div>
         <div className="col-lg-2">
         <Form.Group><Form.Label ><strong>First Name</strong></Form.Label>
@@ -87,6 +88,7 @@ class FrontDeskForm extends Component {
           <div className="col-lg-2"></div>
           </div>
           <div className="row">
+          <div className="col-lg-1"></div>
           <div className="col-lg-2"></div>
           <div className="col-lg-2">
           <Form.Group><Form.Label><strong>Address</strong></Form.Label>
@@ -103,6 +105,7 @@ class FrontDeskForm extends Component {
           <div className="col-lg-2"></div>
           </div>
           <div className="row">
+          <div className="col-lg-1"></div>
           <div className="col-lg-2"></div>
             <div className="col-lg-2">
             <Form.Group><Form.Label><strong>Zip Code</strong></Form.Label>
@@ -119,6 +122,7 @@ class FrontDeskForm extends Component {
             <div className="col-lg-2"></div>
           </div>
           <div className="row">
+          <div className="col-lg-1"></div>
           <div className="col-lg-2"></div>
           <div className="col-lg-2"></div>
             <div className="col-lg-2">
@@ -129,6 +133,7 @@ class FrontDeskForm extends Component {
             <div className="col-lg-2"></div>
           </div>
           <div className="row">
+          <div className="col-lg-1"></div>
           <div className="col-lg-2"></div>
           <div className="col-lg-2"></div>
             <div className="col-lg-2">

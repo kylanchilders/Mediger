@@ -60,9 +60,10 @@ class PatientDiv extends Component {
     render() {
         return (
 
-            <div className="patientDiv" >
-
-                <div className="sideBarMenuContainer">
+            <div className="patientDiv">
+                <div className="row">
+                    <div className="col-lg-2">
+                    <div className="sideBarMenuContainer">
                     <Navbar fluid="true" inverse="true" >
                         <Navbar.Collapse>
                             <Navbar.Text className="nt">
@@ -83,7 +84,9 @@ class PatientDiv extends Component {
                     </Navbar>
 
                 </div>
-                <Card className="card1">
+                    </div>
+                    <div className="col-lg-10">
+                    <Card>
                 <Card.Header  style={{fontFamily:"TimesNewRoman",color:"darkblue",fontSize:"20px"}}><strong>Patient List</strong></Card.Header>
                 <Card.Body className="text-left">
                 <Table striped bordered hover>
@@ -138,6 +141,10 @@ class PatientDiv extends Component {
                 </Table>
                 </Card.Body>
                 </Card>
+                
+                    </div>
+                </div>
+               
                 
                 {/* {this.state.patients.length ? (
                     <List>
