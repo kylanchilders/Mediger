@@ -26,7 +26,7 @@ const Header = () => {
 
   const logoutWithRedirect = () =>
     logout({
-      returnTo:"http://localhost:3000"
+      returnTo:"https://mediger.herokuapp.com"
     });
     return(
 <Navbar className="nb" expand="lg">
