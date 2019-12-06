@@ -1,68 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Real_Reporting_Portal
 
-## Available Scripts
+## Overview
+Mediger is a system designed to handle medical facilities patient information. This system has the capability to sign up a new patient, check them in to a room, allow notes to be made to the patient file as well as check them out when they have completed services. This app uses Node.js, Express,React, Sequelize and MySQL. 
 
-In the project directory, you can run:
+Below is an example of how you would interact with this application.
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### -Landing Page-
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Here you would be introduced to Mediger and have the opportunity to log in to the site. 
+![Login Capture](./client/src/assets/images/landing1.PNG)
 
-### `npm test`
+#### -Login/Registration Page-
+The registration page utilizes 0Auth - If you have an existing account you would log in, otherwise you would first sign up. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+On login there is user validation to ensure username and password are correct.
 
-### `npm run build`
+![Register Capture](./client/src/assets/images/0Auth2.PNG)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### -Admin Page- 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Here is what the user will see when they successfully log in. There are a number of options the user can choose - they can view current patient lists, go see what rooms are currently in use, they can enter company info or they can use the front desk. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Login Capture](./client/src/assets/images/3Login.PNG)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### -Room Page- 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Add Room Capture](./client/src/assets/images/4AddRoom.PNG)
+Adding rooms would be one of the first things you do when using this app as part of the overall setup of your organization. Any time you add a room it will modify the state, and react will update the page reflecting the new room. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Dyno Room Capture](./client/src/assets/images/5DynoRoom.PNG)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Users are also able to see who is checked in to the room currently and access any notes that patient has on file. 
+Finally, if a room was added by mistake, users have the ability to delete the room on this page. 
 
-## Learn More
+#### -Front Desk Page-
+The front desk is where the user will spend most of their time. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Here you can add a new patient to the system:
+![Patient Capture](./client/src/assets/images/6AddPatient.PNG)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Once added, similar to the room view the page will automatically update reflecting the new entry allowing the front desk to then proceed to check them in to any rooms that are available
+![Dyno Patient Capture](./client/src/assets/images/7DynoPatient.PNG)
 
-### Code Splitting
+The check-in process is relatively simple. There is a dropdown next to each user which when clicked will show all rooms that are currently available. The user would select the appropriate room and click the check-in button. The check-in is immediate and the room number is then reflected on the patient line. 
+![Dyno Patient Capture](./client/src/assets/images/8CheckinPatient.PNG)
+If the user needed to check in another patient, when they click the dropdown the room that was just checked in to would not be present. 
+![Dyno Patient Capture](./client/src/assets/images/9DynoPatient.PNG)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+#### -Patient List Page-
+This view offers a more comprehensive patient view. All of the details that were captured at the front desk are now displayed here as well as access to the notes section.
+![Dyno Patient Capture](./client/src/assets/images/10PatientList.PNG)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Patients can be deleted from the system here and if that action is taken, after the user confirms the action, the patient will be removed from the database along with all of their notes, and if that patient was still assigned to a room, that room will be modified and marked as available. 
 
-### Making a Progressive Web App
+#### -Notes Page-
+Here users can make notes that are associated only with those patients. 
+![Dyno Patient Capture](./client/src/assets/images/11Notes.PNG)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Should a note be written in error, the user does have the option of deleting it from their record. 
