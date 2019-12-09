@@ -1,4 +1,4 @@
-# Real_Reporting_Portal
+# Mediger
 
 ## Overview
 Mediger is a system designed to handle medical facilities patient information. This system has the capability to sign up a new patient, check them in to a room, allow notes to be made to the patient file as well as check them out when they have completed services. This app uses Node.js, Express,React, Sequelize and MySQL. 
